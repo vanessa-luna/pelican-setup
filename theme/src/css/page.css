@@ -1,0 +1,56 @@
+
+/*
+██████   █████   ██████  ███████
+██   ██ ██   ██ ██       ██
+██████  ███████ ██   ███ █████
+██      ██   ██ ██    ██ ██
+██      ██   ██  ██████  ███████
+*/
+
+
+.page {
+  /*min-height: calc(100vh - 2.5rem);*/
+}
+
+/* IMPORTANT FOR non-cover image titles*/
+.page-title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+.page-cover {
+  display:table;
+  position:relative;
+  top:0;
+  left:0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 60vh;
+}
+.page-cover .page-title {
+  display:table-cell;
+  padding-top:4rem;
+  padding-left:2rem;
+  vertical-align: middle;
+  text-shadow: 3px 3px 5px black;
+}
+.page-cover .page-subtitle {
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    letter-spacing: 1px;
+}
+@media (max-width: 599px) {
+    /*.page-cover { background-size: contain; }*/
+    .page-cover .page-title {
+        width:100%;
+        padding-left: 1rem;
+        padding-bottom: 2rem;
+        vertical-align: bottom;
+    }
+    .page-cover + .pad-content {
+        padding-top: 1rem;
+    }
+}

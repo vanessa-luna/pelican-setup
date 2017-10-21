@@ -1,0 +1,30 @@
+
+
+
+
+
+.contact-form .gform {
+    width:100%;
+    max-width: 30rem;
+    margin:auto;
+    font-size: 1.1rem;
+}
+
+.form-troubles {
+    margin: 1rem auto 0;
+    text-align: center;
+}
+
+.helping :first-child {
+    margin-top:0;
+}
+.helping h4 {
+    margin:0;
+    margin-bottom: .5rem;
+}
+
+
+
+.about img {
+    margin: 2rem auto 0;
+}

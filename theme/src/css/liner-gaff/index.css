@@ -1,0 +1,253 @@
+
+
+
+
+/*
+██ ███    ██ ████████ ██████   ██████
+██ ████   ██    ██    ██   ██ ██    ██
+██ ██ ██  ██    ██    ██████  ██    ██
+██ ██  ██ ██    ██    ██   ██ ██    ██
+██ ██   ████    ██    ██   ██  ██████
+*/
+
+
+.intro { text-align:center; }
+
+.intro h4:first-of-type {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.intro ul { display: inline-block;}
+.intro ul li { text-align: left; }
+
+.intro .features {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    left: -1rem;
+    width: calc(100% - -2rem);
+    padding: 2rem 0;
+}
+.intro .features p {
+    padding: 0 1rem 1rem;
+    line-height: 2;
+}
+
+
+@media (max-width: 359px) {
+    .intro ul { padding-left: 1rem;}
+    .intro ul li { padding-left: 0; text-indent: 0; }
+}
+
+
+
+
+/*
+███████ ██      ██ ██████  ███████ ███████ ██   ██  ██████  ██     ██
+██      ██      ██ ██   ██ ██      ██      ██   ██ ██    ██ ██     ██
+███████ ██      ██ ██   ██ █████   ███████ ███████ ██    ██ ██  █  ██
+     ██ ██      ██ ██   ██ ██           ██ ██   ██ ██    ██ ██ ███ ██
+███████ ███████ ██ ██████  ███████ ███████ ██   ██  ██████   ███ ███
+*/
+
+
+
+
+/* actually change the photos */
+input[type=checkbox]:checked + .img-toggle + .drawings { display: none; }
+input[type=checkbox]:checked + .img-toggle + .drawings + .photos { display: flex; }
+
+.drawings, .photos {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+.photos { display:none; }
+
+.drawings img, .photos img {
+    flex: 0 0 20%;
+    width: 10rem;
+    height: 10rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+
+/*
+███████ ███    ██ ██   ██  █████  ███    ██  ██████ ███████
+██      ████   ██ ██   ██ ██   ██ ████   ██ ██      ██
+█████   ██ ██  ██ ███████ ███████ ██ ██  ██ ██      █████
+██      ██  ██ ██ ██   ██ ██   ██ ██  ██ ██ ██      ██
+███████ ██   ████ ██   ██ ██   ██ ██   ████  ██████ ███████
+*/
+
+
+.enhancements {
+    padding-top: 1rem;
+}
+
+
+
+
+/*
+██ ███    ██ ████████ ██████   ██████      ██    ██ ██ ██████
+██ ████   ██    ██    ██   ██ ██    ██     ██    ██ ██ ██   ██
+██ ██ ██  ██    ██    ██████  ██    ██     ██    ██ ██ ██   ██
+██ ██  ██ ██    ██    ██   ██ ██    ██      ██  ██  ██ ██   ██
+██ ██   ████    ██    ██   ██  ██████        ████   ██ ██████
+*/
+
+/*  Make the video box fill more of the screen using hacks!  */
+
+.intro-video {
+    position:relative;
+}
+.intro-video h3 { margin-bottom: 0;}
+.intro-video p { padding-left: 1rem;}
+
+.intro-video .videobox {
+    margin-left: 0;
+    width: calc(100vw - 4rem);
+    height: 75vh;
+}
+
+@media (max-width: 599px) { .intro-video { left: -1rem; width: 100vw; } }
+@media (min-width: 600px) { .intro-video { left:  -5vw;  width:  90vw; } }
+@media (min-width: 900px) { .intro-video { left: -10vw;  width:  80vw; } }
+
+@media (max-width: 599px) { .intro-video > * { margin-left: .5rem; } }
+@media (min-width: 600px) { .intro-video > * { margin-left: 5vw;   } }
+@media (min-width: 900px) { .intro-video > * { margin-left: 10vw;  } }
+
+@media (max-width: 599px) { .intro-video .videobox { width: 100vw;     } }
+
+
+
+/*
+ █████  ██████  ██████  ███████  █████  ██
+██   ██ ██   ██ ██   ██ ██      ██   ██ ██
+███████ ██████  ██████  █████   ███████ ██
+██   ██ ██      ██      ██      ██   ██ ██
+██   ██ ██      ██      ███████ ██   ██ ███████
+*/
+
+.appeal {
+    display:table;
+}
+.appeal img {
+    float:left;
+    margin-right: 2rem;
+}
+
+
+
+
+/*
+ ██████  ██████  ███    ██ ████████ ██████  ██ ██████  ██    ██ ████████ ███████
+██      ██    ██ ████   ██    ██    ██   ██ ██ ██   ██ ██    ██    ██    ██
+██      ██    ██ ██ ██  ██    ██    ██████  ██ ██████  ██    ██    ██    █████
+██      ██    ██ ██  ██ ██    ██    ██   ██ ██ ██   ██ ██    ██    ██    ██
+ ██████  ██████  ██   ████    ██    ██   ██ ██ ██████   ██████     ██    ███████
+*/
+
+
+/* buttons at bottom of index */
+.buttons {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.buttons .box {
+    margin: 1.5rem 1rem;
+    padding: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+/*
+███████  █████   ██████  ███████
+██      ██   ██ ██    ██ ██
+█████   ███████ ██    ██ ███████
+██      ██   ██ ██ ▄▄ ██      ██
+██      ██   ██  ██████  ███████
+                    ▀▀
+*/
+
+.faq ul {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+.faq ul li {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-indent: -1rem;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+}
+.faq ul li:before {
+    /*  */
+    content: "\f192";
+    /*  */
+    /*content: "\f29c";*/
+    font-size: 0.7rem;
+    line-height: 1.7rem;
+    font-weight: bold;
+    padding-right: .5rem;
+    vertical-align: text-bottom;
+}
+
+/* sub list */
+.faq ul > li > ul {
+    list-style: none;
+    /*padding-left: 0;*/
+}
+.faq ul > li > ul > li {
+    font-size: 1rem;
+    font-weight: normal;
+    text-indent: 0rem;
+    padding-left: 0rem;
+    margin-top: 0rem;
+}
+.faq ul > li > ul > li:before {
+    display:none;
+}
+
+@media (max-width: 599px) {
+    .faq ul li { padding-left: 0; }
+    .faq ul > li > ul { padding-left: 0; }
+}
+@media (max-width: 359px) {
+    .faq ul { padding-left: 0; }
+    .faq ul li { text-indent: 0; }
+    .faq ul li:before { display: none;}
+}
+
+
+
+/*
+███    ███ ███████ ██████  ██  █████
+████  ████ ██      ██   ██ ██ ██   ██
+██ ████ ██ █████   ██   ██ ██ ███████
+██  ██  ██ ██      ██   ██ ██ ██   ██
+██      ██ ███████ ██████  ██ ██   ██
+*/
+
+@media (max-width: 499px) {
+    .appeal img {
+        float:none;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+@media (max-width: 599px) {
+    .intro .features { padding: 2rem 0; }
+}

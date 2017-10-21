@@ -1,0 +1,13 @@
+{% macro toc(text) %}
+<div class="toc">
+    <h3> Contents </h3>
+    {{ text }}
+</div>
+{% endmacro %}
+
+{% if article and article.toc is defined %}
+    {{ toc(article.toc) }}
+{% endif %}
+{% if page and page.toc is defined %}
+    {{ toc(page.toc) }}
+{% endif %}

@@ -1,0 +1,8 @@
+{% if articles_paginator %}
+  {% if category %}
+    {% set prefix = category.name + "-" %}
+  {% else %}
+    {% set prefix = "" %}
+  {% endif %}
+ <i class="fa fa-star"></i> <a href="{{SITEURL}}/{{FEED_BASE_FOLDER}}{{prefix}}rss.xml"><i class='fa fa-rss'></i> {{prefix}}RSS</a>
+{% endif %}

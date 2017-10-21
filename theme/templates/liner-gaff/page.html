@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+	{% include 'fragments/head.html' %}
+
+	{% block assets %}
+		{% assets "css-liner-gaff" %}
+	<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+		{% endassets %}
+	{% endblock %}
+	{% if page.url == 'liner-gaff/' %}
+	{% elif page.url == 'liner-gaff/info' %}
+		<link rel="stylesheet" href="/liner-gaff/assets/photoswipe.css">
+		<link rel="stylesheet" href="/liner-gaff/assets/default-skin/default-skin.css">
+		<script src="/liner-gaff/assets/photoswipe.min.js"></script>
+		<script src="/liner-gaff/assets/photoswipe-ui-default.min.js"></script>
+	{% elif page.url == 'liner-gaff/donate' %}
+	{% elif page.url == 'liner-gaff/order' %}
+		<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.11.1/validate.min.js"></script>
+	{% elif page.url == 'liner-gaff/contact' %}
+		<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.11.1/validate.min.js"></script>
+	{% endif %}
+	<title>Liner Gaff</title>
+</head>
+<body>
+	<div class="content">
+		{% include 'liner-gaff/fragments/menu.html' %}
+		{% if page.metadata['coverimage'] %}
+		  <div class="min-height-full">
+			<div class="page-cover" style="background-image: url('{{ page.metadata['coverimage'] }}')">
+				<div class="page-title" style="color: {{ page.metadata['covertitlecolor']}}"><h1 class="post-title">{{ page.title }}</h1><span class="page-subtitle">{{ page.metadata['subtitle']}}</span>
+				</div>
+				<div class="page-title" style="width:40%"></div>
+			</div>
+			<div class="pad-content">
+		{% else %}
+		  <div class="pad-content min-height-full">
+			  {% if page.title is defined and page.title|length > 0 %}
+			  	<h1 class="page-title" style="color: {{ page.metadata['covertitlecolor']}}">{{ page.title }}</h1>
+			  {% endif %}
+		{% endif %}
+				{{ page.content }}
+			</div>
+		{% if page.metadata['coverimage'] %}</div>{% endif %}
+		{% include 'fragments/footer.html' %}
+	      </div>
+	</div>
+</body>
+</html>

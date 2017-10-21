@@ -1,0 +1,95 @@
+
+
+
+.guides-intro {
+    text-align: center;
+}
+
+
+.toc {
+    display:inline-block;
+}
+.toc h2 {
+    margin-bottom:0;
+}
+.toc ul { display:inline-block; }
+@media (max-width: 599px) {
+    .toc ul { padding-left: 1rem; }
+}
+.toc ul li {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+
+
+
+/*
+███    ███ ███████  █████  ███████ ██    ██ ██████  ███████
+████  ████ ██      ██   ██ ██      ██    ██ ██   ██ ██
+██ ████ ██ █████   ███████ ███████ ██    ██ ██████  █████
+██  ██  ██ ██      ██   ██      ██ ██    ██ ██   ██ ██
+██      ██ ███████ ██   ██ ███████  ██████  ██   ██ ███████
+*/
+
+/*
+ ██████  ██    ██ ██ ██████  ███████
+██       ██    ██ ██ ██   ██ ██
+██   ███ ██    ██ ██ ██   ██ █████
+██    ██ ██    ██ ██ ██   ██ ██
+ ██████   ██████  ██ ██████  ███████
+*/
+
+
+.measure-warning {
+    display:inline-block;
+    float:right;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.measure-warning a {
+    display:block;
+}
+.measure-warning a:hover {
+    background-color: #f7e8e8;
+    text-decoration: none;
+}
+
+.measurement-guide-gotchas ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    display:inline-block;
+    text-align: left;
+}
+@media (max-width: 599px) {
+    .measurement-guide-gotchas ul {
+        margin-left: 0rem;
+        padding-left: 1rem;
+    }
+
+}
+
+.measurement-guide-text h4 {
+    margin-bottom: 0;
+}
+
+.measurement-guide-table tr td:last-of-type {
+    padding: 0;
+}
+
+
+.measure-img:hover { background-color: #f7e8e8; }
+.measure-img {
+    width: 35rem;
+    padding: 1rem;
+    margin: 0;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.measure-img.photo { display:none; }
+input[type=checkbox]:checked + .img-toggle + table tbody tr td .measure-img.draw { display: none; }
+input[type=checkbox]:checked + .img-toggle + table tbody tr td .measure-img.photo { display: block; }

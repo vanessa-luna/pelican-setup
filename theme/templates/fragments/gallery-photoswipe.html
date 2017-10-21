@@ -1,0 +1,88 @@
+
+{% if article.galleryimages is defined and article.galleryimages|length > 0 %}
+
+
+<div class='album' id="{{article.album}}">
+  {% for image in article.galleryimages %}
+    <div class='album-image'>
+      <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, {{loop.index-1}})"
+          src="{{ SITEURL }}/thumb/tiny/{{article.album}}/{{ image }}">
+    </div>
+  {% endfor %}
+</div>
+
+{% assets "js-photoswipe" %}
+    <script type="text/javascript" src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
+{% endassets %}
+{% assets "js-photoswipe-ui" %}
+    <script type="text/javascript" src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
+{% endassets %}
+{% assets "css-fragment-photoswipe" %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+{% endassets %}
+
+<script>
+    var items = []
+    {% for image in article.galleryimages %}
+      items [{{loop.index-1}}] = {
+        src: '{{ SITEURL }}/{{ GALLERY_PATH }}/{{ article.album }}/{{ image }}',
+        w: 500,
+        h: 281
+      }
+    {% endfor %}
+    function initGallery(items, index) {
+        var options = {
+            index: index,
+            barsSize: {top:0, bottom:'auto'},
+            closeEl:false, captionEl: false, fullscreenEl: false,
+            zoomEl: false, shareEl: false, counterEl: false,
+            arrowEl: true, preloaderEl: true,
+            tapToClose: true, tapToToggleControls: true,
+            clickToCloseNonZoomable: false
+        }
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        console.log(pswpElement);
+        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
+    }
+</script>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endif %}

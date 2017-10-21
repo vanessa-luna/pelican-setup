@@ -1,0 +1,52 @@
+
+/*
+ █████  ██████   ██████ ██   ██ ██ ██    ██ ███████ ███████
+██   ██ ██   ██ ██      ██   ██ ██ ██    ██ ██      ██
+███████ ██████  ██      ███████ ██ ██    ██ █████   ███████
+██   ██ ██   ██ ██      ██   ██ ██  ██  ██  ██           ██
+██   ██ ██   ██  ██████ ██   ██ ██   ████   ███████ ███████
+*/
+
+
+dl {
+    padding: 0;
+    margin-top:2.5rem;
+}
+
+dl dt {
+    padding: 0;
+    margin-top: 16px;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: bold
+}
+
+dl dd {
+    padding: 0 16px;
+    margin-bottom: 16px
+}
+
+
+
+dt.year { font-size: 1.2rem; }
+dt.month { font-size: 1.5rem; }
+dd { margin-left: 2rem; padding: 0 !important; }
+ul.days { list-style: none; padding-left: 0; margin-top:1rem; }
+ul.days li {
+  display:flex;
+  margin-bottom: .5rem;
+}
+.days .calendar-date {
+    width: 1.6rem;
+    min-width: 1.6rem;
+    height: 1.3rem;
+    min-height: 1.3rem;
+    line-height: 1.5rem;
+    padding: 0;
+    margin-right: .5rem;
+    text-align: center;
+}
+
+@media (max-width: 599px) {
+    dd { margin-left: 0.5rem;}
+}

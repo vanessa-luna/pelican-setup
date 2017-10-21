@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block assets %}
+	{% assets "css-index" %}
+	<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+	{% endassets %}
+{% endblock %}
+
+{% block page_title %}Posts{% endblock page_title %}
+
+{% block content %}
+	<div class="index pad-content">
+		<div class="posts">
+		{% for article in articles_page.object_list %}
+			<div class="post">
+				<h1 class="post-title" href="{{ SITEURL }}/{{ article.url }}">
+					<div class='post-meta'><div class="inner-meta box">
+					{% if article.gallery %}
+						<i class="fa fa-picture"></i>
+					{% endif %}
+						{{ article.category.name}}<br>
+						<span class="post-date">{{ article.locale_date }}</span>
+					</div></div>
+					<a class="post-title-a" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+				</h1>
+				<p>
+					{{ article.summary }}
+				</p>
+				{% include 'fragments/soundcloud.html' %}
+				{% if article.summary != article.content %}
+				<div style="text-align:right;">
+					<a class="read-more box" href="{{ SITEURL }}/{{ article.url }}">continue »</a>
+				</div>
+				{% endif %}
+			</div>
+		{% endfor %}
+		</div>
+	{% include 'fragments/pagination.html' %}
+	</div>
+{% endblock %}

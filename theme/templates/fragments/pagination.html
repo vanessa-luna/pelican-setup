@@ -1,0 +1,84 @@
+
+{% macro newer(url) %}
+<div class="pagination-item">
+    <a class="box" href="{{ SITE_URL }}/{{ url }}">
+        <span class="newer">Newer</span>
+    </a>
+</div>
+{% endmacro %}
+
+{% macro newerEmpty() %}
+<div class="pagination-item">
+    <span class="empty-box newer"></span>
+</div>
+{% endmacro %}
+
+
+{% macro older(url) %}
+<div class="pagination-item">
+    <a class="box" href="{{ SITE_URL }}/{{ url }}">
+        <span class="older">Older</span>
+    </a>
+</div>
+{% endmacro %}
+
+{% macro olderEmpty() %}
+<div class="pagination-item">
+    <span class="empty-box older"></span>
+</div>
+{% endmacro %}
+
+
+
+      <div class="pagination">
+        {# IF ON A PAGINATED PAGE #}
+        {% if articles_page %}
+          {% if articles_previous_page %}
+        {{ newer(articles_previous_page.url) }}
+          {% else %}
+        {{ newerEmpty() }}
+          {% endif %}
+
+        <div class="pagination-list">
+          {#  loop through how many pages, create list  #}
+          {% for i in articles_paginator.page_range %}
+            {% set page_url = articles_paginator.page(i).url %}
+            {% set li_class = '' %}
+            {% if articles_page.url == page_url %}
+              {% set li_class = 'current-page' %}
+            {% endif %}
+          <a class='box {{li_class}}' href="/{{page_url}}">{{i}}</a>
+          {% endfor %}
+        </div>
+
+          {% if articles_next_page %}
+        {{ older(articles_next_page.url) }}
+          {% else %}
+        {{ olderEmpty() }}
+          {% endif %}
+
+
+        {# IF ON AN ARTICLE #}
+        {% elif dates %}
+
+          {% for post in dates %}
+
+            {% if article.url == post.url %}
+              {% if dates[loop.index -2] and not loop.first %}
+        {{ newer(dates[loop.index -2].url) }}
+              {% else %}
+        {{ newerEmpty() }}
+              {% endif %}
+
+        <span class="pagination-spacer"></span>
+
+              {% if dates[loop.index] %}
+        {{ older(dates[loop.index].url) }}
+              {% else %}
+        {{ olderEmpty() }}
+              {% endif %}
+
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>

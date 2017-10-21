@@ -1,0 +1,232 @@
+
+
+/*
+ ██████  ██████  ██       ██████  ██████  ███████
+██      ██    ██ ██      ██    ██ ██   ██ ██
+██      ██    ██ ██      ██    ██ ██████  ███████
+██      ██    ██ ██      ██    ██ ██   ██      ██
+ ██████  ██████  ███████  ██████  ██   ██ ███████
+*/
+/*
+    link        = ff7256      coral
+    brighter    = fff2d6      washed out coral
+
+    warning     = ff213f       ff0033
+*/
+
+
+
+/*
+██████   █████  ███████ ███████
+██   ██ ██   ██ ██      ██
+██████  ███████ ███████ █████
+██   ██ ██   ██      ██ ██
+██████  ██   ██ ███████ ███████
+*/
+/*   ROOT LEVEL CHANGES FOR ALL PAGES   */
+html {
+    font-family: "Khula", sans-serif, 'font-awesome-plus-min';
+}
+
+table td { padding: 1rem; }
+
+/* TABLES WILL COLLAPSE ON MOBILE, ONLY WORKS WELL WITH TWO CELL TABLES hmmm */
+@media (max-width: 599px) {
+    table {
+        border-collapse: separate;
+    }
+    table td {
+        display:block;
+        padding: 1rem;
+    }
+    table td a.box {
+        padding: 1rem;
+    }
+    table td:nth-child(1) {
+        border-bottom: 0;
+        padding-top: 1rem;
+    }
+    table td:nth-child(2) {
+        border-top: 0;
+    }
+}
+
+
+
+
+
+
+/* Fat list with checkbox  */
+ol {
+    /*font-style:italic;*/
+    /*font-weight:bold;*/
+    /*font-size:1.1rem;*/
+    /*text-align: left;*/
+    /*margin: 1rem 0 2rem;*/
+    /*list-style-image: url('/liner-gaff/assets/unchecked_checkbox.png');*/
+    /*list-style-position: outside;*/
+}
+ol li { padding: .5rem inherit; }
+
+ul { margin: 1rem 0 2rem; }
+ul li { padding-top: .2rem; padding-bottom: .2rem; }
+
+
+:target:before {
+    content:"";
+    display:block;
+    height:4rem; /* fixed header height*/
+    margin:-4rem 0 0; /* negative fixed header height */
+}
+
+@media (max-width: 599px) {
+    :target:before {
+        height:1rem; /* fixed header height*/
+        margin:-1rem 0 0; /* negative fixed header height */
+    }
+}
+
+
+
+
+
+
+.flex-table{
+  	display: block;
+  	width: 100%;
+    overflow: auto;
+    word-break: normal;
+    word-break: keep-all;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+.flex-row {
+    display:flex;
+    background-color: #fff;
+}
+.flex-row:nth-child(2n) {
+    background-color: #fbfbfb;
+}
+
+.flex-cell {
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+/* TABLES WILL COLLAPSE ON MOBILE, ONLY WORKS WELL WITH TWO CELL TABLES hmmm */
+@media (max-width: 599px) {
+    .flex-table {
+        border-collapse: separate;
+    }
+    .flex-row {
+        flex-direction: column;
+    }
+    .flex-table .flex-cell {
+        display:block;
+        padding: 1rem;
+    }
+    .flex-table .flex-cell a.box {
+        padding: 1rem;
+    }
+    .flex-table .flex-cell:nth-child(1) {
+        border-bottom: 0;
+    }
+    .flex-table .flex-cell:nth-child(2) {
+        border-top: 0;
+    }
+}
+
+
+
+
+
+/*
+███    ███  █████  ██ ███    ██
+████  ████ ██   ██ ██ ████   ██
+██ ████ ██ ███████ ██ ██ ██  ██
+██  ██  ██ ██   ██ ██ ██  ██ ██
+██      ██ ██   ██ ██ ██   ████
+*/
+/* styles for extra fun stuff that's used by more than one page */
+
+
+
+/* reset so it fills the whole page without the sidebar*/
+.content {
+    position: relative;
+    left: 0;
+    width: 100%;
+}
+
+/* for every top level div, space that shit out! */
+.pad-content > div { padding-bottom: 4rem; }
+/* first child of div is almost always a heading */
+.pad-content > div > :first-child { margin-top:0;}
+/* remove any excess margin and padding from the last child of the page inside a div to ensure that only the pad-content bottom padding is the space until the footer */
+.pad-content > div:last-of-type { padding-bottom: 0; }
+.pad-content > div:last-child > *:last-child { margin-bottom: 0; }
+
+/* put page title closer to top of page. Looks nicer */
+.page-title { margin-top: 0;}
+
+
+
+/* adjust page title padding to compensate for page width*/
+.page-cover { height: 75vh; min-height: 20rem; }
+.page-cover .page-title { padding-left: calc(2rem - -10vw); }
+@media (max-width: 599px) {
+    .page-cover { height: 40vh; }
+    .page-cover .page-title { padding-left: 1rem; }
+}
+
+
+
+.outer-flex {
+    display:flex;
+    width:100%;
+    height:100%;
+}
+.inner-margins {
+    margin:auto;
+}
+
+
+
+/* increases font size of bold stuff by a bit */
+.large-bold strong {
+    font-size: 1.1rem;
+}
+
+
+
+.warning-block {
+    margin-left: 2rem;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    color: #e0003c;
+    border-left: 3px solid #e0003c;
+}
+
+/* to make redish text */
+.warning-span {
+    color: #e0003c;
+}
+
+
+/*
+███    ███ ███████ ██████  ██  █████
+████  ████ ██      ██   ██ ██ ██   ██
+██ ████ ██ █████   ██   ██ ██ ███████
+██  ██  ██ ██      ██   ██ ██ ██   ██
+██      ██ ███████ ██████  ██ ██   ██
+*/
+
+@media (max-width: 599px) {
+    table td { padding: .5rem; }
+}
+@media (max-width: 599px) { .pad-content { margin: 0;      } }
+@media (min-width: 600px) { .pad-content { margin: 0 5vw;  } }
+@media (min-width: 900px) { .pad-content { margin: 0 10vw; } }

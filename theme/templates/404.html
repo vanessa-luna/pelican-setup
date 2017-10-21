@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+	<head>
+		{% include 'fragments/head.html' %}
+		<title>{% block page_title %}{{ SITENAME }}{% endblock page_title %}{% if SITESUBTITLE %} - {{ SITESUBTITLE }}{% endif %}</title>
+		{% block assets %}
+			{% assets "css-page" %}
+			<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+			{% endassets %}
+		{% endblock %}
+<style>
+	.whole-page {
+		position:relative;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		width:100%;
+		height:100%;
+		overflow: hidden;
+		clear:both;
+		margin: 0;
+		padding: 0;
+	}
+	.window {
+		display:block;
+		/*opacity: .8;*/
+		width:100%;
+		height:100%;
+		margin:auto;
+		pointer-events: none;
+	}
+	.window img {
+		width: 100%;
+		height: 100%;
+		object-fit:cover;
+	}
+	.world {
+		position: absolute;
+		width:100%;
+		height:100%;
+		z-index: -1;
+	}
+	.world img {
+		object-fit: cover;
+		width:100%;
+		height:100%;
+	}
+</style>
+	</head>
+    <body>
+		<div class="whole-page">
+		    <div class="world" data-depth="1.00"><img src="/images/404/tumblr_o9ss48e6ZE1u6i8k5o1_400.gif"></div>
+		    <div class="window" data-depth="0.0"><img src="/images/404/window-big.png"></div>
+		</div>
+
+		<script>
+			document.addEventListener("mousemove", function (e) {
+				// start listening for the mouse a lot
+				var world = document.querySelector(".world img");
+				// so I can go from -28% - 28%
+				var x = e.pageX / window.innerWidth;
+				var y = e.pageY / window.innerHeight;
+				x = -28 + (56 * x);
+				y = -28 + (56 * y);
+				// console.log(x,y);
+				world.style.position = "absolute";
+				// world.style.left = parseInt(x) + "%";
+				// world.style.top = parseInt(y) + "%";
+				//http://cuteglrl.tumblr.com/ask
+			});
+		</script>
+
+		<!-- Scripts -->
+		<!-- <script src="/theme/js/parallax.js"></script> -->
+		<script>
+		// Pretty simple huh?
+		// var scene = document.getElementById('whole-page');
+		// var parallax = new Parallax(scene);
+		</script>
+    </body>
+</html>

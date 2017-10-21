@@ -1,0 +1,103 @@
+
+/*
+███    ███ ███████ ███    ██ ██    ██
+████  ████ ██      ████   ██ ██    ██
+██ ████ ██ █████   ██ ██  ██ ██    ██
+██  ██  ██ ██      ██  ██ ██ ██    ██
+██      ██ ███████ ██   ████  ██████
+*/
+
+.liner-gaff-menu {
+    position: fixed;
+    width:100%;
+    z-index: 10;
+    overflow: hidden;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #666;
+    background-image: url(/theme/whitenoise-55x34.png);
+    box-shadow: 0px 1px 10px -2px black;
+}
+
+.liner-gaff-menu menu {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    float:right;
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+
+.liner-gaff-menu > div, .liner-gaff-menu menu > div {
+    display:inline-block;
+    height:100%;
+}
+.liner-gaff-menu div a {
+    display:inline-flex;
+    height:100%;
+    padding: 0 2vw;
+    line-height: 3.2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+.liner-gaff-menu div a:hover {
+    background-color: #f7e8e8;
+}
+.liner-gaff-menu div a div {
+    margin:auto;
+}
+
+.liner-gaff-menu > div.active, .liner-gaff-menu menu > div.active {
+    background-color: #f7e8e8;
+}
+
+.liner-gaff-menu + .min-height-full {
+    min-height: calc(100vh - 2.3rem - 2.9rem);
+}
+.liner-gaff-menu + .min-height-full > *:first-child {
+    margin-top: 0;
+}
+.liner-gaff-menu + * {
+    margin-top: 3rem;
+}
+
+#menu-toggle { display:none; }
+.menu-icon {
+    float:right;
+    display:none;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 5rem;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.menu-icon:hover {
+    background-color: #f7e8e8;
+}
+
+@media (max-width: 599px) {
+    .liner-gaff-menu {
+        position: inherit;
+        margin: 0;
+        z-index: 0;
+        overflow: visible;
+        box-shadow: none;
+    }
+    .liner-gaff-menu menu { width:100%; }
+    .liner-gaff-menu menu div a { margin-top: 1px; }
+    .liner-gaff-menu + * {
+        margin-top:0rem;
+    }
+
+
+    /* HAMBURGER */
+    .menu-icon { display:flex; }
+    .liner-gaff-menu menu { display:none;}
+    .menu-icon + div { display:none;}
+
+    #menu-toggle:checked + label { display:none; }
+    #menu-toggle:checked ~ div { display:block; }
+    #menu-toggle:checked ~ menu { display:flex; float:none; }
+}

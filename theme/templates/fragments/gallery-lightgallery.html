@@ -1,0 +1,35 @@
+
+
+{% if article.galleryimages is defined and article.galleryimages|length > 0 %}
+
+
+{% assets "lightgallery-js" %}<script type="text/javascript" src="{{ SITEURL }}/{{ ASSET_URL }}"></script>{% endassets %}
+{% assets "lightgallery-css" %}<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">{% endassets %}
+
+
+<div id='dynamic'></div>
+
+<script type="text/javascript">
+
+  var items = []
+  {% for image in article.galleryimages %}
+    items [{{loop.index-1}}] = {
+      src: '{{ SITEURL }}/{{ GALLERY_PATH }}/{{ article.album }}/{{ image }}',
+      thumb: "{{ SITEURL }}/thumb/tiny/{{article.album}}/{{ image }}"
+    }
+  {% endfor %}
+
+  $(this).lightGallery({
+    dynamic: true,
+    closable: true,
+    download: false,
+    enableDrag: true,
+    thumbnail: true,
+    width: '50%',
+    height: '50%',
+    dynamicEl: items
+  })
+</script>
+
+
+{% endif %}

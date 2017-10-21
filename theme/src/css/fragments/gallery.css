@@ -1,0 +1,49 @@
+/*
+███████  ██████  ███    ██ ████████  █████  ██     ██ ███████ ███    ███
+██      ██    ██ ████   ██    ██    ██   ██ ██     ██ ██      ████  ████
+█████   ██    ██ ██ ██  ██    ██    ███████ ██  █  ██ ███████ ██ ████ ██
+██      ██    ██ ██  ██ ██    ██    ██   ██ ██ ███ ██      ██ ██  ██  ██
+██       ██████  ██   ████    ██    ██   ██  ███ ███  ███████ ██      ██
+*/
+
+
+/* close button for fullscreen fotorama */
+/*
+.fa-close:before { content: "\f00d"; }
+*/
+
+
+/*
+ ██████   █████  ██      ██      ███████ ██████  ██    ██
+██       ██   ██ ██      ██      ██      ██   ██  ██  ██
+██   ███ ███████ ██      ██      █████   ██████    ████
+██    ██ ██   ██ ██      ██      ██      ██   ██    ██
+ ██████  ██   ██ ███████ ███████ ███████ ██   ██    ██
+*/
+
+
+.close {
+  position:absolute;
+  z-index: 10;
+  right:0;
+  top:0;
+  width:2rem;
+  height:2rem;
+  margin-top:.5rem;
+  margin-right:.5rem;
+  border: 1px solid white;
+  border-radius: 3px;
+  font-size: 1.3rem;
+  text-align: center;
+  vertical-align: middle;
+  color:white;
+  cursor: pointer;
+
+}
+.close:hover{
+  background-color: #333;
+}
+.gallery-click {
+  font-size: 1.5rem;
+  cursor: pointer;
+}

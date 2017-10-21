@@ -1,0 +1,319 @@
+/*
+ ██████  ██████  ██       ██████  ██████  ███████
+██      ██    ██ ██      ██    ██ ██   ██ ██
+██      ██    ██ ██      ██    ██ ██████  ███████
+██      ██    ██ ██      ██    ██ ██   ██      ██
+ ██████  ██████  ███████  ██████  ██   ██ ███████
+*/
+/*
+
+    CURRENT
+    link     = e78d9f
+    brighter = f7e8e8
+    warning  = e0003c
+
+
+
+    OLD
+    link     = ff7256
+    brighter = fff2d6
+*/
+
+
+
+
+/*
+███████  ██████  ███    ██ ████████ ███████
+██      ██    ██ ████   ██    ██    ██
+█████   ██    ██ ██ ██  ██    ██    ███████
+██      ██    ██ ██  ██ ██    ██         ██
+██       ██████  ██   ████    ██    ███████
+*/
+
+/* latin-ext */
+@font-face {
+  font-family: 'Khula';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Khula Regular'), local('Khula-Regular'), url(https://fonts.gstatic.com/s/khula/v2/rqKgtQguZSGVDNd351zyCQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Khula';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Khula Regular'), local('Khula-Regular'), url(https://fonts.gstatic.com/s/khula/v2/SYvd5I-BTu9JPZJQxkiU_w.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+
+
+
+ /*
+  ██████  ██       ██████  ██████   █████  ██
+ ██       ██      ██    ██ ██   ██ ██   ██ ██
+ ██   ███ ██      ██    ██ ██████  ███████ ██
+ ██    ██ ██      ██    ██ ██   ██ ██   ██ ██
+  ██████  ███████  ██████  ██████  ██   ██ ███████
+ */
+
+@charset "UTF-8";
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+
+html {
+    font-family: "Khula", "Open Sans", sans-serif, 'font-awesome-plus-min';
+    height:100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    height:100%;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+body>*:first-child {
+    margin-top: 0 !important
+}
+body>*:last-child {
+    margin-bottom: 0 !important
+}
+span { display: inline; }
+div { display:block; }
+
+a {
+    display: inline;
+    color: #e78d9f;
+    text-decoration: none;
+    background: transparent;
+}
+a:hover,a:focus,a:active {
+    text-decoration: underline;
+}
+
+
+*::selection {
+  color: #333;
+  background: #f7e8e8; /* WebKit/Blink Browsers */
+}
+*::-moz-selection {
+  color: #333;
+  background: #f7e8e8; /* Gecko Browsers */
+}
+
+textarea {
+    font-family:inherit;
+}
+
+
+
+/*
+██  ██████  ██████  ███    ██     ███████  ██████  ███    ██ ████████
+██ ██      ██    ██ ████   ██     ██      ██    ██ ████   ██    ██
+██ ██      ██    ██ ██ ██  ██     █████   ██    ██ ██ ██  ██    ██
+██ ██      ██    ██ ██  ██ ██     ██      ██    ██ ██  ██ ██    ██
+██  ██████  ██████  ██   ████     ██       ██████  ██   ████    ██
+*/
+
+@font-face {
+  font-family: 'font-awesome-plus-min';
+  src: url('../fonts/font-awesome-plus-min.eot?72689739');
+  src: url('../fonts/font-awesome-plus-min.eot?72689739#iefix') format('embedded-opentype'),
+       url('../fonts/font-awesome-plus-min.woff2?72689739') format('woff2'),
+       url('../fonts/font-awesome-plus-min.woff?72689739') format('woff'),
+       url('../fonts/font-awesome-plus-min.ttf?72689739') format('truetype'),
+       url('../fonts/font-awesome-plus-min.svg?72689739#font-awesome-plus-min') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 'font-awesome-plus-min';
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* MY ADDITION */
+.icon .fa {
+  width:1rem;
+  height:1rem;
+  text-align: center;
+}
+
+
+
+.fa-star:before { content: '\e800'; } /* '' */
+.fa-heart:before { content: '\e801'; } /* '' */
+.fa-picture:before { content: '\e802'; } /* '' */
+.fa-eye:before { content: '\e803'; } /* '' */
+.fa-eye-off:before { content: '\e804'; } /* '' */
+.fa-thumbs-up:before { content: '\e805'; } /* '' */
+.fa-cog-alt:before { content: '\e806'; } /* '' */
+.fa-flight:before { content: '\e807'; } /* '' */
+.fa-flash:before { content: '\e808'; } /* '' */
+.fa-leaf:before { content: '\e809'; } /* '' */
+.fa-cloud-moon-inv:before { content: '\e80a'; } /* '' */
+.fa-sun-1:before { content: '\e80b'; } /* '' */
+.fa-off:before { content: '\e80c'; } /* '' */
+.fa-cancel:before { content: '\e80d'; } /* '' */
+.fa-umbrella:before { content: '\e80e'; } /* '' */
+.fa-moon-1:before { content: '\e80f'; } /* '' */
+.fa-cloud-sun-inv:before { content: '\e810'; } /* '' */
+.fa-feather:before { content: '\e811'; } /* '' */
+.fa-tree-2:before { content: '\e83f'; } /* '' */
+.fa-link-ext:before { content: '\f08e'; } /* '' */
+.fa-rss:before { content: '\f09e'; } /* '' */
+.fa-menu:before { content: '\f0c9'; } /* '' */
+.fa-sort-down:before { content: '\f0dd'; } /* '' */
+.fa-fighter-jet:before { content: '\f0fb'; } /* '' */
+.fa-angle-double-down:before { content: '\f103'; } /* '' */
+.fa-laptop:before { content: '\f109'; } /* '' */
+.fa-rocket:before { content: '\f135'; } /* '' */
+.fa-anchor:before { content: '\f13d'; } /* '' */
+.fa-sun:before { content: '\f185'; } /* '' */
+.fa-moon:before { content: '\f186'; } /* '' */
+.fa-dot-circled:before { content: '\f192'; } /* '' */
+.fa-space-shuttle:before { content: '\f197'; } /* '' */
+.fa-file-video:before { content: '\f1c8'; } /* '' */
+.fa-plug:before { content: '\f1e6'; } /* '' */
+.fa-copyright:before { content: '\f1f9'; } /* '' */
+.fa-transgender-alt:before { content: '\f225'; } /* '' */
+.fa-battery-2:before { content: '\f242'; } /* '' */
+.fa-hourglass-1:before { content: '\f251'; } /* '' */
+.fa-hourglass-2:before { content: '\f252'; } /* '' */
+.fa-hourglass-3:before { content: '\f253'; } /* '' */
+.fa-hand-grab-o:before { content: '\f255'; } /* '' */
+.fa-hand-paper-o:before { content: '\f256'; } /* '' */
+.fa-hand-scissors-o:before { content: '\f257'; } /* '' */
+.fa-question-circle-o:before { content: '\f29c'; } /* '' */
+.fa-twitter-bird:before { content: '\f303'; } /* '' */
+
+
+
+
+/*
+██████   █████  ███████ ███████    ██   ██ ████████ ███    ███ ██
+██   ██ ██   ██ ██      ██         ██   ██    ██    ████  ████ ██
+██████  ███████ ███████ █████      ███████    ██    ██ ████ ██ ██
+██   ██ ██   ██      ██ ██         ██   ██    ██    ██  ██  ██ ██
+██████  ██   ██ ███████ ███████ ██ ██   ██    ██    ██      ██ ███████
+*/
+
+.content {
+  display:block;
+  position: absolute;
+  float:left;
+  left: 30vw;
+  width: 70vw;
+  min-height:100%;
+  overflow-y: hidden;
+  background-color: #FBFBFB;
+  background-image: url(/theme/whitenoise-55x34.png);
+  /*  http://api.thumbr.it/whitenoise-55x34.png?background=fbfbfb&noise=dfdfdf&density=11&opacity=17  */
+  /*http://api.thumbr.it/whitenoise-55x34.png?background=fbfbfb&noise=dfdfdf&density=13&opacity=30*/
+  /*background-color: white;*/
+}
+.min-height-full{
+    min-height: calc(100vh - 2.3rem);
+}
+.pad-content {
+  padding-top:    2rem;
+  padding-bottom: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.pad-title {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@media (max-width: 599px) {
+  .content {
+    position: inherit;
+    float:none;
+    width: 100%;
+    box-shadow: 0px 30px 9px 0px #000;
+  }
+  .pad-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+
+@media (max-width: 359px) {
+    .pad-content { padding-left: .5rem; padding-right: .5rem;}
+}
+
+
+/*
+██████   ██████  ██   ██
+██   ██ ██    ██  ██ ██
+██████  ██    ██   ███
+██   ██ ██    ██  ██ ██
+██████   ██████  ██   ██
+*/
+/*
+    This is the foundation of my style. The box.
+
+    A regular box is bordered, padded. Then add from there.
+    If Anchor tag, border is changed, font color is changed, background highlight is changed.
+*/
+
+.box {
+    background-color: white;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+.box:hover {
+    text-decoration: none;
+    background-color: #f7e8e8;
+}
+.empty-box { visibility: hidden; }
+
+/* INLINE BOXES */
+span.box, a.box, .inline.box {
+    padding: 0 .5em;
+}
+/* BLOCK BOXES */
+div.box, .block.box, .inline-block.box  {
+    text-align: center;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+/* SPECIAL BOXES */
+a.box {
+    color: #e78d9f;
+    text-decoration: none;
+    border-color: #e78d9f;
+}
+
+
+/*
+███    ███ ███████ ██████  ██  █████
+████  ████ ██      ██   ██ ██ ██   ██
+██ ████ ██ █████   ██   ██ ██ ███████
+██  ██  ██ ██      ██   ██ ██ ██   ██
+██      ██ ███████ ██████  ██ ██   ██
+*/
+
+@media (max-width:  599px) { html { font-size: 17px; } }
+@media (min-width:  800px) { html { font-size: 18px; } }
+@media (min-width: 1024px) { html { font-size: 19px; } }
+@media (min-width: 1440px) { html { font-size: 21px; } }
+@media (min-width: 1640px) { html { font-size: 25px; } }

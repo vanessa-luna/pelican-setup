@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+	<head>
+		<title>{% block page_title %}{{ page.metadata['pagetitle'] }}{% endblock page_title %} | Vanessa & Luna</title>
+		{% include 'fragments/head.html' %}
+		{% block assets %}
+			{% assets "css-page" %}
+			<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+			{% endassets %}
+			{% assets "js-validate" %}
+		    <script type="text/javascript" src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
+		    {% endassets %}
+		{% endblock %}
+
+	</head>
+	<body>
+		{% include 'fragments/sidebar.html' %}
+		<div class="content">
+			{% if page.metadata['coverimage'] %}
+			  <div class="min-height-full">
+				<div class="page-cover" style="background-image: url('{{ page.metadata['coverimage'] }}')">
+					<h1 class="page-title" style="color: {{ page.metadata['covertitlecolor']}}">{{ page.title }}</h1>
+					<div class="page-title" style="width:40%"></div>
+				</div>
+				<div class="pad-content">
+			{% else %}
+			  <div class="pad-content min-height-full">
+				  <h1 class="page-title" style="color: {{ page.metadata['covertitlecolor']}}">{{ page.title }}</h1>
+			{% endif %}
+
+					{{ page.content }}
+				</div>
+			{% if page.metadata['coverimage'] %}</div>{% endif %}
+			{% include 'fragments/footer.html' %}
+		      </div>
+		</div>
+	</body>
+</html>

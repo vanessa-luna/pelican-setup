@@ -1,0 +1,73 @@
+
+/*
+██████   █████   ██████  ██ ███    ██  ██████
+██   ██ ██   ██ ██       ██ ████   ██ ██
+██████  ███████ ██   ███ ██ ██ ██  ██ ██   ███
+██      ██   ██ ██    ██ ██ ██  ██ ██ ██    ██
+██      ██   ██  ██████  ██ ██   ████  ██████
+*/
+
+
+.pagination {
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width:100%;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.pagination > * {
+    margin-bottom: 2rem;
+}
+
+.pagination-item {
+    display:flex;
+    flex: 0 0 20%;
+    word-break: keep-all;
+}
+.pagination-item .box {
+    display:block;
+    width: 100%;
+    padding: 1rem;
+    margin:auto;
+}
+
+.pagination-list {
+    display:flex;
+    flex: 1 0 60%;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.pagination-list .box {
+    padding: .5rem;
+    margin-left: .3rem;
+    margin-top: 1rem;
+    min-width: 2rem;
+    max-width: 3rem;
+}
+.pagination-list .current-page {
+    background-color: #f7e8e8;
+}
+
+
+@media (max-width: 599px) {
+    .pagination {
+        display:block;
+    }
+    .pagination-item {
+        display:block;
+        width: 100%;
+    }
+    .pagination-list {
+        padding: 2rem 0;
+    }
+    .pagination-list .box {
+        padding: 1rem;
+        min-width: 3.5rem;
+    }
+    .pagination-item .box { padding: 2rem 1rem; }
+}

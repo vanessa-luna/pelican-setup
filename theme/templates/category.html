@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block assets %}
+	{% assets "css-category" %}
+	<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+	{% endassets %}
+{% endblock %}
+
+{% block page_title %}{{category|title}} posts{% endblock page_title %}
+
+
+{% block title %}
+  <h1 class="category-title pad-content">{{ category | title }} Posts</h1> 
+{% endblock %}

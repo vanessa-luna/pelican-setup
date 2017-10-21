@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+	<title>{% block page_title %}{% endblock page_title %} | Vanessa & Luna</title>
+	{% include 'fragments/head.html' %}
+	{% block assets %} {% endblock %}
+</head>
+<body>
+	{% include 'fragments/sidebar.html' %}
+	<div class="content">
+		{% block title %} {% endblock %}
+		{% block content %} {% endblock %}
+		{% include 'fragments/footer.html' %}
+	</div>
+</body>
+</html>

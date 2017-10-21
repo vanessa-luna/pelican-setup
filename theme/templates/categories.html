@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block assets %}
+	{% assets "css-categories" %}
+	<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+	{% endassets %}
+{% endblock %}
+
+{% block page_title %}Categories{% endblock page_title %}
+
+
+{% block content %}
+<div class="pad-content min-height-full">
+	<h1>Categories</h1>
+	  <div class="categories">
+	  {% for cat, arts in categories %}
+	    <a class="category" href="{{SITEURL}}/{{cat.url}}">
+	      <div class="category-count">({{ arts | length }})</div>
+	      <div class="box">{{ cat.name }}</div>
+	    </a>
+	  {% endfor %}
+	</div>
+</div>
+{% endblock %}

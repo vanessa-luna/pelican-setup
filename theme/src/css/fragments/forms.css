@@ -1,0 +1,291 @@
+
+
+
+
+/*
+    If you have thank-you div after form, this is perfect
+
+*/
+#thank-you {
+    display:none;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+
+
+
+
+
+input::placeholder, textarea::placeholder,
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder ,
+input:-ms-input-placeholder, textarea:-ms-input-placeholder,
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color: #666;
+    opacity: 1;
+}
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder { opacity: 0; }
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { opacity: 0; }
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder { opacity: 0; }
+input:focus::placeholder, textarea:focus::placeholder { opacity: 0; }
+
+
+input, textarea, select { line-height: 1; }
+
+form label {
+    display:inline-block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: .4rem;
+}
+form input, form textarea, form select {
+    width:100%;
+    padding: .9em;
+    font-size: .9em;
+    line-height: 1;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 4px;
+    z-index: 1;
+    outline: 0;
+}
+
+
+
+form textarea {
+    height: 6em;
+    resize:vertical;
+    vertical-align: top;
+}
+
+
+form select {
+    display: inline-block;
+    outline:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+form select::after {
+    content: "▼";
+}
+
+
+
+form input[type=submit] {
+    border: 1px solid #e78d9f;
+    color: #e78d9f;
+    font-weight: bold;
+    cursor: pointer;
+}
+form input[type=submit]:hover,
+form input[type=submit]:focus,
+form input[type=submit]:active {
+  text-decoration: none;
+  background-color: #f7e8e8;
+}
+
+
+
+
+
+
+.err {
+    position: relative;
+    top: .3rem;
+    padding: .2rem .5rem .5rem;
+    color: #f9f9f9;
+    font-size: 0.7em;
+    font-family: monospace;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px #333;
+    background-color: #e0003c;
+    border: 1px solid #333;
+    border-radius: 4px 4px 0 0;
+}
+
+/*
+███████ ██      ██ ██████  ███████     ██       █████  ██████  ███████ ██
+██      ██      ██ ██   ██ ██          ██      ██   ██ ██   ██ ██      ██
+███████ ██      ██ ██   ██ █████       ██      ███████ ██████  █████   ██
+     ██ ██      ██ ██   ██ ██          ██      ██   ██ ██   ██ ██      ██
+███████ ███████ ██ ██████  ███████     ███████ ██   ██ ██████  ███████ ███████
+*/
+
+
+.slide-label {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: .5rem;
+}
+.slide-label input:focus,
+.slide-label textarea:focus,
+.slide-label select:focus {
+    /*border-color: #e78d9f;*/
+    background-color: #f7e8e8;
+    padding-right: 7rem;
+}
+
+.slide-label label {
+    position: absolute;
+    top: 0px;
+    right: 50%;
+    height: 100%;
+    width: 6rem;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    opacity: 0;
+    color: #f9f9f9;
+    font-size: inherit;
+    font-weight: normal;
+    text-shadow: 1px 1px #333;
+    background: #e78d9f;
+    border-top: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    pointer-events:none;
+    z-index: 2;
+    transition: opacity 0.1s, right 0.1s;
+}
+
+.slide-label input:focus + label,
+.slide-label textarea:focus + label,
+.slide-label select:focus + label { right: 0; opacity: 1; }
+
+
+
+
+
+
+
+
+/*
+██████   █████  ██████  ██  ██████      ██████   █████  ██████
+██   ██ ██   ██ ██   ██ ██ ██    ██     ██   ██ ██   ██ ██   ██
+██████  ███████ ██   ██ ██ ██    ██     ██████  ███████ ██████
+██   ██ ██   ██ ██   ██ ██ ██    ██     ██   ██ ██   ██ ██   ██
+██   ██ ██   ██ ██████  ██  ██████      ██████  ██   ██ ██   ██
+*/
+
+
+.switch-field {
+    display:flex;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 0 .5rem 0;
+}
+.switch-field input { display:none; }
+.switch-field label {
+  display: inline-block;
+  flex: 1 0 50%;
+  color: #666;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+  padding: .5rem;
+  margin:0;
+  border: 1px solid #333;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition:    all 0.1s ease-in-out;
+  -ms-transition:     all 0.1s ease-in-out;
+  -o-transition:      all 0.1s ease-in-out;
+  transition:         all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+    cursor: pointer;
+    background-color: #f7e8e8;
+    border-color: #e78d9f;
+}
+.switch-field input:checked + label {
+  color: #f9f9f9;
+  text-shadow: 1px 1px #333;
+  background-color: #e78d9f;
+  border-color: #333;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.switch-field label:first-of-type { border-radius: 4px 0 0 4px; border-right: 0; }
+.switch-field label:last-of-type  { border-radius: 0 4px 4px 0; }
+
+
+
+
+
+/*
+████████  ██████   ██████   ██████  ██      ███████
+   ██    ██    ██ ██       ██       ██      ██
+   ██    ██    ██ ██   ███ ██   ███ ██      █████
+   ██    ██    ██ ██    ██ ██    ██ ██      ██
+   ██     ██████   ██████   ██████  ███████ ███████
+*/
+
+
+/* the base class for showing the drawing <> photo toggle */
+.img-toggle {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: .5rem 0 1rem;
+}
+@media (max-width: 599px) {
+    .img-toggle {
+        font-size: 1.3rem;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 2rem;
+    }
+}
+/* class for actual toggle */
+.switch {
+  font-size: .7em;
+  margin: 0 .3em;
+  position: relative;
+  display: inline-block;
+  width: 4.3em;
+  height: 2em;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .15s;
+  transition: .15s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.65em;
+  width: 1.65em;
+  right: 2.4em;
+  bottom: .165em;
+  background-color: white;
+  -webkit-transition: right .15s;
+  transition: right .15s;
+}
+/* Rounded sliders */
+.slider.round { border-radius: 1rem; }
+.slider.round:before { border-radius: 50%; }
+
+
+/* selectors for managing toggle animations */
+input[type="checkbox"] {display:none;}
+input[type="checkbox"]:focus + .img-toggle .switch .slider { box-shadow: 0 0 1px #e78d9f; }
+input[type="checkbox"]:checked + .img-toggle .switch .slider { background-color: #e78d9f; }
+input[type="checkbox"]:checked + .img-toggle .switch .slider:before {
+  right: .25rem;
+}

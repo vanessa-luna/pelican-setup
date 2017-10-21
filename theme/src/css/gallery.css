@@ -1,0 +1,48 @@
+/*
+ █████  ██      ██          ██ ███    ███  ██████  ███████
+██   ██ ██      ██          ██ ████  ████ ██       ██
+███████ ██      ██          ██ ██ ████ ██ ██   ███ ███████
+██   ██ ██      ██          ██ ██  ██  ██ ██    ██      ██
+██   ██ ███████ ███████     ██ ██      ██  ██████  ███████
+*/
+
+#fullscreen {
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index: 100;
+  background-color: #111;
+}
+.album {
+  line-height: 0;
+  -webkit-column-count: 5;
+  -moz-column-count:    5;
+  column-count:         5;
+  -webkit-column-gap:   2px;
+  -moz-column-gap:      2px;
+  column-gap:           2px;
+}
+.album-image {
+  width: 100%;
+  height: auto;
+  margin: 2px;
+}
+.album .album-image:first-of-type {
+  margin-top:0;
+}
+.album-image img {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+  border-radius: 0;
+  margin: 2px auto;
+}
+
+@media (max-width: 599px) { .album { column-count:2;-moz-column-count:2;-webkit-column-count:2; } }
+@media (min-width: 600px) { .album { column-count:2;-moz-column-count:2;-webkit-column-count:2; } }
+@media (min-width: 800px) { .album { column-count:3;-moz-column-count:3;-webkit-column-count:3; } }
+@media (min-width: 1024px) { .album { column-count:4;-moz-column-count:4;-webkit-column-count:4; } }
+@media (min-width: 1440px) { .album { column-count:5;-moz-column-count:5;-webkit-column-count:5; } }

@@ -1,0 +1,30 @@
+
+
+
+
+
+/*
+███████  ██████  ██████  ███    ███
+██      ██    ██ ██   ██ ████  ████
+█████   ██    ██ ██████  ██ ████ ██
+██      ██    ██ ██   ██ ██  ██  ██
+██       ██████  ██   ██ ██      ██
+*/
+
+.request-inputs {
+    display:flex;
+    position: relative;
+    left: -1rem;
+    width: calc(100% - -2rem);
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/* each child of request inputs is a group of inputs */
+.request-inputs > * {
+    flex: 1 1 16rem;
+    margin: 0 1rem 1rem;
+}
+
+@media (max-width: 599px) {
+    .request-inputs > * { margin-bottom: 2rem; }
+}

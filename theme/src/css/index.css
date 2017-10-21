@@ -1,0 +1,81 @@
+/*
+███████  ██████  ███    ██ ████████  █████  ██     ██ ███████ ███    ███
+██      ██    ██ ████   ██    ██    ██   ██ ██     ██ ██      ████  ████
+█████   ██    ██ ██ ██  ██    ██    ███████ ██  █  ██ ███████ ██ ████ ██
+██      ██    ██ ██  ██ ██    ██    ██   ██ ██ ███ ██      ██ ██  ██  ██
+██       ██████  ██   ████    ██    ██   ██  ███ ███  ███████ ██      ██
+*/
+
+/* image icon indicator on index */
+/*.fa-image:before { content: "\f03e"; }*/
+
+
+
+/*
+██ ███    ██ ██████  ███████ ██   ██
+██ ████   ██ ██   ██ ██       ██ ██
+██ ██ ██  ██ ██   ██ █████     ███
+██ ██  ██ ██ ██   ██ ██       ██ ██
+██ ██   ████ ██████  ███████ ██   ██
+*/
+
+
+.posts {
+  margin-bottom: 1rem;
+}
+.posts .post {
+  padding-bottom: 3rem;
+  margin-top: 3rem;
+  border-bottom: 1px solid #ccc;
+}
+/*prevent large gap at top of index page*/
+.posts .post:first-child {
+  margin-top: 2rem;
+}
+
+.post:first-child  h1:first-of-type {
+  margin-top:0;
+}
+
+
+.read-more.box {
+    padding: .5rem;
+}
+
+/*https://codepen.io/anon/pen/RLybGz?editors=0100*/
+.post-meta {
+    float: right;
+    height: 2em;
+    font-size: .9rem;
+}
+.post-meta .inner-meta {
+    position:relative;
+    bottom: 2.3rem;
+    color: #666;
+    border-color: #666;
+    background: transparent;
+    margin-left: 1rem;
+    pointer-events: none;
+}
+
+.post-meta .post-date {
+  font-size: .9em;
+  text-align: inherit;
+}
+
+
+
+/*
+ ██████  █████  ████████ ███████  ██████   ██████  ██████  ██    ██
+██      ██   ██    ██    ██      ██       ██    ██ ██   ██  ██  ██
+██      ███████    ██    █████   ██   ███ ██    ██ ██████    ████
+██      ██   ██    ██    ██      ██    ██ ██    ██ ██   ██    ██
+ ██████ ██   ██    ██    ███████  ██████   ██████  ██   ██    ██
+*/
+
+/* For when we are viewing a category index */
+
+.category-title {
+	padding-bottom: 0;
+	border: 0;
+}

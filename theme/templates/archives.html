@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block assets %}
+	{% assets "css-archives" %}
+	<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+	{% endassets %}
+{% endblock %}
+
+{% block page_title %}Archive{% endblock page_title %}
+
+
+
+{% macro dt(text,class) %}
+<dl><dt class={{class}}>{{text}}</dt>
+{% endmacro %}
+
+{% block content %}
+<div class="pad-content min-height-full">
+  <h1>{% if category %}{{ category | title }}{% endif %} Archives</h1>
+
+  <span class="byCategory">
+    by category:
+	{% if not category %}<b>{% endif %}
+		<a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">all</a>
+	{% if not category %}</b>{% endif %},
+
+	{% for cat, articles in categories %}
+	  {% if cat == category %}<b>{% endif %}
+      <a href="{{ SITEURL }}/{{ ARCHIVES_PER_CATEGORY_URL | replace('{category}', cat) }}">{{ cat }}</a>
+	  {% if cat == category %}</b>{% endif %}
+	  {% if not loop.last %}, {% endif %}
+    {% endfor %}
+  </span>
+
+  <dl id='period-archives'>
+    {% for article in dates %}
+      {% if loop.first %}
+        {% set prev_year = None %}
+        {% set prev_month = None %}
+      {% elif not loop.first %}
+        {% set prev_year = dates[loop.index-2].date.year %}
+        {% set prev_month = dates[loop.index-2].date.month %}
+      {% endif %}
+      {% if prev_year != article.date.year %}
+        {% if not loop.first %}
+            </ul></dd>
+          </dl>
+        </dl>
+        {% endif %}
+        <!-- {{ dt(article.date.year, 'year') }} -->
+          {{ dt(article.date.strftime('%B %Y'), 'month') }}
+            <dd><ul class='days'>
+      {% elif prev_month != article.date.month %}
+        {% if not loop.first %}
+            </ul></dd>
+          </dl>
+        {% endif %}
+          {{ dt(article.date.strftime('%B %Y'), 'month') }}
+            <dd><ul class='days'>
+      {% endif %}
+              <li><span class="box calendar-date">{{ article.date.day }}</span> <span class="archives-post-title">
+				    <a href='{{ SITEURL }}/{{ article.url }}'>
+					  {% if article.gallery %}<i class="fa fa-picture"></i> {% endif %}{{ article.title }}
+					</a>
+				  </span>
+			  </li>
+      {% if loop.last %}
+            </ul></dd>
+          </dl>
+        </dl>{% endif %}
+    {% endfor %}
+  </dl>
+</div>
+{% endblock %}

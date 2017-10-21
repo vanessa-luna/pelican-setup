@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block assets %}
+	{% assets "css-article" %}
+	<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+	{% endassets %}
+{% endblock %}
+
+{% block page_title %}{{article.title}}{% endblock %}
+
+{% block content %}
+<div class="min-height-full pad-content">
+	<div class="post">
+		<h1 class="post-title">{{ article.title }}</h1>
+		<span class="post-date">{{ article.category }} ~ {{ article.locale_date }}</span>
+		<br><br>
+		{% include 'fragments/toc.html' %}
+		{{ article.content }}
+		{% include 'fragments/soundcloud.html' %}
+		{% include 'fragments/gallery-fotorama.html' %}
+		{% include 'fragments/pagination.html' %}
+		{% include 'fragments/disqus.html' %}
+	</div>
+</div>
+{% endblock %}

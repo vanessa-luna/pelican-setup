@@ -1,0 +1,23 @@
+<div class="liner-gaff-menu">
+    <div class="{% if output_file == "liner-gaff/index.html" %}active{% endif %}">
+        <a href="/liner-gaff">
+            <div>LINER GAFF</div>
+        </a>
+    </div>
+    
+    <input id="menu-toggle" type="checkbox">
+    <label class="menu-icon" for="menu-toggle"><i class="fa fa-menu"></i></label>
+
+    <div class="{% if "blog/" in output_file %}active{% endif %}" style="float:right;">
+        <a href="/liner-gaff/blog">
+            <div>BLOG</div>
+        </a>
+    </div>
+    <menu>
+        <!-- <div><a href="/liner-gaff/donate">GOALS</a></div> -->
+        <div class="{% if output_file == "liner-gaff/info/index.html" %}active{% endif %}"><a href="/liner-gaff/info"><div>INFO</div></a></div>
+        <div class="{% if output_file == "liner-gaff/donate/index.html" %}active{% endif %}"><a href="/liner-gaff/donate"><div>DONATE</div></a></div>
+        <div class="{% if output_file == "liner-gaff/order/index.html" %}active{% endif %}"><a href="/liner-gaff/order"><div>ORDER</div></a></div>
+        <div class="{% if output_file == "liner-gaff/contact/index.html" %}active{% endif %}"><a href="/liner-gaff/contact"><div>CONTACT</div></a></div>
+    </menu>
+</div>

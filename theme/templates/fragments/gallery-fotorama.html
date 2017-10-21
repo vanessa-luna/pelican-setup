@@ -1,0 +1,47 @@
+
+
+{% if article.galleryimages is defined and article.galleryimages|length > 0 %}
+
+{% assets "js-gallery" %}<script type="text/javascript" src="{{ SITEURL }}/{{ ASSET_URL }}"></script>{% endassets %}
+{% assets "css-fragment-gallery" %}<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">{% endassets %}
+
+
+<div id='fotorama' class='fotorama' data-auto='false'></div>
+
+<script type="text/javascript">
+    var items = []
+    {% for image in article.galleryimages %}
+      items [{{loop.index-1}}] = {
+        img: '{{ SITEURL }}/{{ GALLERY_PATH }}/{{ article.album }}/{{ image }}',
+        thumb: "{{ SITEURL }}/thumb/tiny/{{article.album}}/{{ image }}"
+      }
+    {% endfor %}
+
+    var foto_div = $('#fotorama').fotorama({
+      width: '100%', height: '90%',
+      nav:'thumbs', navposition: 'bottom', navwidth: '90%',
+      allowfullscreen: true, keyboard: true,
+      thumbheight: '40', thumbwidth: '70', thumbborderwidth: 5,
+      shadows: true,
+      spinner: {
+        lines: 13, length: 20, width: 6, radius: 24, scale: 1, corners: 0.6, color: '#825', opacity: 0.25, rotate: 50, direction: -1, speed: 1, trail: 50, fps: 20, zIndex: 2e9, className: 'spinner', top: '50%', left: '50%', shadow: true, hwaccel: true, position: 'absolute' }
+    });
+    var foto_api = foto_div.data('fotorama');
+    foto_api.load(items);
+    foto_api.show(0);
+</script>
+<noscript>
+    <style>#fotorama { display:none;} </style>
+    <div class="noscript-gallery">
+        {% for image in article.galleryimages %}
+            <div>
+                <input id="img-checkbox{{loop.index}}" type="checkbox">
+                <label for="img-checkbox{{loop.index}}">
+                    <img class="center" src="{{ SITEURL }}/thumb/large/{{ article.album }}/{{ image }}">
+                </label>
+            </div>
+        {% endfor %}
+    </div>
+</noscript>
+
+{% endif %}

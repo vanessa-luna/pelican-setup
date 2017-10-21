@@ -1,0 +1,139 @@
+
+
+
+
+
+
+/*
+████████  ██████  ████████  █████  ██      ███████
+   ██    ██    ██    ██    ██   ██ ██      ██
+   ██    ██    ██    ██    ███████ ██      ███████
+   ██    ██    ██    ██    ██   ██ ██           ██
+   ██     ██████     ██    ██   ██ ███████ ███████
+*/
+
+
+.monthly-totals {
+    display:flex;
+    display:none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+.monthly-totals .total {
+    flex: 1 0 40%;
+    display:inline-flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    margin: 0 1rem;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+.total .value {
+    font-size: 1.5em;
+}
+.total .per-month {
+    font-size: 1rem;
+}
+
+
+/*
+██ ███    ██ ████████ ██████   ██████
+██ ████   ██    ██    ██   ██ ██    ██
+██ ██ ██  ██    ██    ██████  ██    ██
+██ ██  ██ ██    ██    ██   ██ ██    ██
+██ ██   ████    ██    ██   ██  ██████
+*/
+
+/* The image in the table for the donation services */
+.badge {
+    padding: 0 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+
+
+.donate-intro .flex-table .flex-row .flex-cell:first-of-type {
+    flex: 1 1 10%;
+    padding: 0rem;
+    text-align: center;
+}
+.donate-intro .flex-table .flex-row .flex-cell:last-of-type {
+    flex: 1 0 20%;
+    vertical-align: middle;
+}
+.donate-intro .flex-table .flex-row .flex-cell blockquote {
+    margin-bottom: 0;
+}
+.donate-intro .flex-table .flex-cell a.box {
+    display:block;
+    width:100%;
+    height:100%;
+    border: 0;
+    padding: 1rem;
+    background: none;
+}
+.donate-intro .flex-table .flex-cell a.box:hover  {
+    background-color: #f7e8e8;
+}
+
+
+
+
+
+/*
+ ██████  ██    ██  █████  ███    ██ ████████ ██ ████████ ██    ██
+██    ██ ██    ██ ██   ██ ████   ██    ██    ██    ██     ██  ██
+██    ██ ██    ██ ███████ ██ ██  ██    ██    ██    ██      ████
+██ ▄▄ ██ ██    ██ ██   ██ ██  ██ ██    ██    ██    ██       ██
+ ██████   ██████  ██   ██ ██   ████    ██    ██    ██       ██
+    ▀▀
+*/
+
+
+.donation-quantities {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% - -1rem);
+}
+.donation-quantities .box {
+    flex: 1 1 30%;
+    padding: 0;
+    margin: 0 1rem 1rem 0;
+}
+.donation-quantities .box a {
+    display:block;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: #333;
+}
+.donation-quantities .box .donation-math {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.donation-quantities .box .donation-math .cash {
+    display:inline-block;
+    width: 100%;
+    color: #e78d9f;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: .5rem;
+}
+.donation-quantities .box .donation-math .cash img {
+    display: inline;
+    margin: 0 0.3rem 0 0;
+    max-width: 1.5rem;
+    vertical-align: initial;
+    padding: 0rem 0 0 0;
+}

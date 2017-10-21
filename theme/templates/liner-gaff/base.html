@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+	<title>{% block page_title %}{% endblock page_title %} | Liner Gaff</title>
+	{% include 'fragments/head.html' %}
+	{% block assets %} {% endblock %}
+    {% assets "css-linergaff-base" %}
+        <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+    {% endassets %}
+</head>
+<body>
+	<div class="content">
+		{% include 'fragments/menu.html' %}
+		{% block title %} {% endblock %}
+		{% block content %} {% endblock %}
+		{% include 'fragments/footer.html' %}
+	</div>
+</body>
+</html>
