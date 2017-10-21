@@ -8,6 +8,7 @@ INPUTDIR=$BASEDIR/content
 OUTPUTDIR=$BASEDIR/.output
 
 CONFDIR=$BASEDIR/config
+
 BLOG_CONF=$CONFDIR/blog_conf.py
 LINERGAFF_CONF=$CONFDIR/linergaff_conf.py
 SHADOWS_CONF=$CONFDIR/shadows_conf.py
@@ -22,7 +23,7 @@ $PELICAN -s $BLOG_CONF      -o $OUTPUTDIR $INPUTDIR
 
 
 
-# IF SEND IN OPTION DON"T GIT THAT SHIT...
+# IF SEND IN OPTION DON'T GIT THAT SHIT...
 if [[ ($# -eq 0) ]]; then
     # git
     cd .output
