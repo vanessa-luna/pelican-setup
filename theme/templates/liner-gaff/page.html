@@ -8,19 +8,7 @@
 	<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
 		{% endassets %}
 	{% endblock %}
-	{% if page.url == 'liner-gaff/' %}
-	{% elif page.url == 'liner-gaff/info' %}
-		<link rel="stylesheet" href="/liner-gaff/assets/photoswipe.css">
-		<link rel="stylesheet" href="/liner-gaff/assets/default-skin/default-skin.css">
-		<script src="/liner-gaff/assets/photoswipe.min.js"></script>
-		<script src="/liner-gaff/assets/photoswipe-ui-default.min.js"></script>
-	{% elif page.url == 'liner-gaff/donate' %}
-	{% elif page.url == 'liner-gaff/order' %}
-		<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.11.1/validate.min.js"></script>
-	{% elif page.url == 'liner-gaff/contact' %}
-		<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.11.1/validate.min.js"></script>
-	{% endif %}
-	<title>Liner Gaff</title>
+	<title>{{page.title}} | Liner Gaff</title>
 </head>
 <body>
 	<div class="content">

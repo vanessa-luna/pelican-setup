@@ -134,7 +134,8 @@ PLUGINS = [
     'assets',
     'gallery',
     'thumbnailer',
-    'archives_per_category'
+    'archives_per_category',
+    'date_utils'
 ]
 
 
@@ -149,11 +150,11 @@ css_linergaff = ['liner-gaff/main.css', 'liner-gaff/menu.css']
 
 asset_linergaff_blog = ('css-linergaff-blog',
                 css_content + css_paginated + ['index.css'] + css_linergaff,
-                {'output': 'css/liner-gaff/index.min.css', 'filters': 'yui_css'})
+                {'output': 'css/liner-gaff-index.min.css', 'filters': 'yui_css'})
 
 asset_linergaff_base = ('css-linergaff-base',
                 css_linergaff,
-                {'output': 'css/liner-gaff/base.min.css', 'filters': 'yui_css'})
+                {'output': 'css/liner-gaff-base.min.css', 'filters': 'yui_css'})
 
 
 ASSET_BUNDLES += [asset_linergaff_blog, asset_linergaff_base]

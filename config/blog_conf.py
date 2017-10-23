@@ -314,7 +314,8 @@ PLUGINS = [
     'pelicanfly',               # adds font awesome support
     'assets',                   # adds compiler for assets
     'gallery',                  # adds gallery support to content
-    'archives_per_category'     # generates archive page per category
+    'archives_per_category',     # generates archive page per category
+    'date_utils'
 ]
 
 
