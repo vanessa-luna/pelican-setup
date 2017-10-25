@@ -291,7 +291,7 @@ BG_GALLERY_NAME = 'backgrounds'
 BG_NUM_IMAGES = 25 # index chosen acts as prefix
 BG_IMAGE_SUFFIX = 'cover.jpg'
 
-# DISQUS_SITENAME ='vanessa-luna'
+COMMENTS_PAGE = "vanessa-luna"
 GOOGLE_ANALYTICS = 'UA-100867520-1'
 GAFF_ANALYTICS = "UA-108064387-1"
 

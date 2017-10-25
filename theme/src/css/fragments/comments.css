@@ -6,9 +6,88 @@
  ██████  ██████  ██      ██ ██      ██ ███████ ██   ████    ██    ███████
 */
 
-.comments-header {
-  display: inline-block;
-  width:100%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+
+
+#hcb_msg { display:none;}
+
+#HCB_comment_box #HCB_comment_form_box {
+    font-size: .8rem;
+    margin-bottom: 1em;
+}
+
+
+#HCB_comment_form_box input, #HCB_comment_form_box textarea {
+    margin-bottom: .5em;
+}
+
+#HCB_comment_form_box .hcb-wrapper-half {
+    display: inline-block;
+    width: 50%;
+}
+
+#HCB_comment_form_box .hcb-wrapper-half:first-of-type {
+    width: calc(50% - .5em);
+    margin-right: .5em;
+}
+
+/* PUT HTMLCCOMENT BOX LINK ON RIGHT */
+.home-desc { display:none;}
+.home-desc + a { float:right;}
+
+/* EMAIL ME REPLIES */
+.home-desc ~ span {
+    float:left;
+    font-size: 1em !important;
+}
+#HCB_comment_form_box input[type="checkbox"] {
+    float:left;
+    display:inline;
+    width: inherit;
+    height: 1.3em;
+    margin: 0 .25em;
+}
+
+/* REMOVE ADMIN LINK */
+small { display:none; }
+
+
+@media (max-width: 599px) {
+    #HCB_comment_form_box .hcb-wrapper-half, #HCB_comment_form_box .hcb-wrapper-half:first-of-type {
+        display: block;
+        width: 100%;
+    }
+}
+
+
+
+
+#comments_list { font-size: .9rem; }
+
+#comments_list .comment:nth-child(2n) {
+    background-color: #f6f6f6;
+}
+#comments_list .comment:hover {
+    background-color: #eee;
+}
+#comments_list .comment { padding: .5em 0; }
+#HCB_comment_box .comment .date { font-size: .9em;}
+#HCB_comment_box .comment .author-name { font-size: 1.1em;}
+
+#HCB_comment_box .comment .hcb-comment-tb a img {
+    display: inline-block;
+    margin: 0 .25em;
+}
+
+
+
+@media (max-width: 599px) {
+    #HCB_comment_box .comment {
+        margin-bottom: 1em;
+    }
+    #comments_list .comment:nth-child(2n) {
+        background-color: #f2f2f2;
+    }
+    #HCB_comment_box .comment .hcb-comment-tb a {
+        visibility: visible !important;
+    }
 }

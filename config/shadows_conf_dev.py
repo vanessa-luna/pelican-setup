@@ -15,5 +15,4 @@ SITEURL            = ''
 CACHE_CONTENT      = False
 LOAD_CONTENT_CACHE = False
 
-DISQUS_SITENAME    = ''
 GOOGLE_ANALYTICS   = ''
