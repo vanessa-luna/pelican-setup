@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
+	<title>{{page.title}} | Liner Gaff</title>
 	{% include 'fragments/head.html' %}
-
 	{% block assets %}
 		{% assets "css-liner-gaff" %}
 	<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
 		{% endassets %}
 	{% endblock %}
-	<title>{{page.title}} | Liner Gaff</title>
 </head>
 <body>
 	<div class="content">
 		{% include 'liner-gaff/fragments/menu.html' %}
+
 		{% if page.metadata['coverimage'] %}
-		  <div class="min-height-full">
-			<div class="page-cover" style="background-image: url('{{ page.metadata['coverimage'] }}')">
-				<div class="page-title" style="color: {{ page.metadata['covertitlecolor']}}"><h1 class="post-title">{{ page.title }}</h1><span class="page-subtitle">{{ page.metadata['subtitle']}}</span>
+		    <div class="min-height-full">
+				<div class="page-cover" style="background-image: url('{{ page.metadata['coverimage'] }}')">
+					<div class="page-title" style="color: {{ page.metadata['covertitlecolor']}}">
+						<h1 class="post-title">{{ page.title }}</h1>
+						<span class="page-subtitle">{{ page.metadata['subtitle']}}</span>
+					</div>
+					<div class="page-title" style="width:40%"></div>
 				</div>
-				<div class="page-title" style="width:40%"></div>
-			</div>
-			<div class="pad-content">
+				<div class="pad-content">
 		{% else %}
-		  <div class="pad-content min-height-full">
+		    <div class="pad-content min-height-full">
 			  {% if page.title is defined and page.title|length > 0 %}
 			  	<h1 class="page-title" style="color: {{ page.metadata['covertitlecolor']}}">{{ page.title }}</h1>
 			  {% endif %}
@@ -30,8 +32,10 @@
 				{{ page.content }}
 			</div>
 		{% if page.metadata['coverimage'] %}</div>{% endif %}
+
 		{% include 'fragments/footer.html' %}
-	      </div>
+
+	    </div>
 	</div>
 </body>
 </html>

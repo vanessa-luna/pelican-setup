@@ -5,7 +5,7 @@
 	{% include 'fragments/head.html' %}
 	{% block assets %} {% endblock %}
     {% assets "css-linergaff-base" %}
-        <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
     {% endassets %}
 </head>
 <body>
@@ -13,6 +13,7 @@
 		{% include 'fragments/menu.html' %}
 		{% block title %} {% endblock %}
 		{% block content %} {% endblock %}
+		
 		{% include 'fragments/footer.html' %}
 	</div>
 </body>
