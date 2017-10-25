@@ -200,4 +200,5 @@ elif [[ $# -eq 1 ]]; then
 else
   shut_down
   serve
+  did_start $srv_pid
 fi
