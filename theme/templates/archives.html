@@ -18,6 +18,7 @@
 <div class="pad-content min-height-full">
   <h1>{% if category %}{{ category | title }}{% endif %} Archives</h1>
 
+  {% if categories|length > 1 %}
   <span class="byCategory">
     by category:
 	{% if not category %}<b>{% endif %}
@@ -31,6 +32,7 @@
 	  {% if not loop.last %}, {% endif %}
     {% endfor %}
   </span>
+  {% endif %}
 
   <dl id='period-archives'>
     {% for article in dates %}

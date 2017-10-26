@@ -1,0 +1,28 @@
+
+
+.box, .btn,
+form input, form textarea, form select {
+    background-color: #fcfcff;
+}
+
+
+#sidebar-bg {
+    filter:blur(4px);
+}
+.sidebar, .sidebar a, .sidebar .subtitle {
+    color: #ccd;
+}
+.sidebar .headline h1 {
+    border-bottom: 1px solid #aab;
+}
+
+.sidebar .headline .profile-picture {
+    filter: brightness(50%) saturate(10);
+}
+
+
+
+.content {
+    background-image: url(/theme/shadownoise-55x34.png);
+    /*http://api.thumbr.it/whitenoise-55x34.png?background=f6f6ff&noise=dfdfdf&density=11&opacity=17*/
+}

@@ -311,6 +311,18 @@
       "css": "angle-double-up",
       "code": 61698,
       "src": "fontawesome"
+    },
+    {
+      "uid": "9dfee680431bb2f9cc4485bfa4d982ac",
+      "css": "hourglass-o",
+      "code": 62032,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "bc9b0a766409e4ddeb2e9745c3e8130c",
+      "css": "hourglass",
+      "code": 62036,
+      "src": "fontawesome"
     }
   ]
 }

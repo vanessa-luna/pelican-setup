@@ -17,13 +17,12 @@ from blog_conf import *
 # ██   ██ ██      ██      ██   ██ ██    ██ ██      ██
 # ██████  ███████ ██      ██   ██  ██████  ███████ ██
 
-PAGE_PATHS = ['']
+PAGE_PATHS = ['shadows/pages']
 PAGE_EXCLUDES = ['pages', 'posts', 'liner-gaff', 'images']
-ARTICLE_PATHS = ['shadows']
+ARTICLE_PATHS = ['shadows/shadows']
 ARTICLE_EXCLUDES = ['posts']
 STATIC_PATHS = []
 STATIC_EXCLUDES = ['images', 'liner-gaff']
-
 
 
 
@@ -39,8 +38,13 @@ INDEX_SAVE_AS      = 's/posts/index.html'
 ARTICLE_URL        = 's/posts/{slug}.html'
 ARTICLE_SAVE_AS    = 's/posts/{slug}.html'
 
+ARCHIVES_URL       = 's/archives/'
+ARCHIVES_SAVE_AS   = 's/archives/index.html'
+
+PAGE_URL           = 's/{slug}/'
+PAGE_SAVE_AS       = 's/{slug}/index.html'
+
 TAGS_SAVE_AS       = False
-ARCHIVES_SAVE_AS   = False
 CATEGORY_SAVE_AS   = False
 CATEGORIES_SAVE_AS = False
 
@@ -66,8 +70,8 @@ THEME_STATIC_PATHS = []
 #    ██    ██      ██  ██  ██ ██      ██      ██   ██    ██    ██
 #    ██    ███████ ██      ██ ██      ███████ ██   ██    ██    ███████
 
-DIRECT_TEMPLATES = ['index']
-
+DIRECT_TEMPLATES        = ['index', 'archives']
+EXTRA_TEMPLATES_PATHS   = ['theme/templates/shadows'] # relative to pwd of scripts
 
 
 
@@ -80,19 +84,29 @@ DIRECT_TEMPLATES = ['index']
 
 FEED_ATOM             = None
 FEED_RSS              = None
-# FEED_ALL_RSS          = None
-# CATEGORY_FEED_RSS     = None
 
-# TAG_FEED_RSS          = None
-# AUTHOR_FEED_RSS       = None
-# TRANSLATION_FEED_RSS  = None
 
-# FEED_ALL_ATOM         = None
-# FEED_ALL_ATOM         = None
-# TAG_FEED_ATOM         = None
-# AUTHOR_FEED_ATOM      = None
-# CATEGORY_FEED_ATOM    = None
-# TRANSLATION_FEED_ATOM = None
+
+#  ██████ ██    ██ ███████ ████████  ██████  ███    ███ ██ ███████ ███████
+# ██      ██    ██ ██         ██    ██    ██ ████  ████ ██    ███  ██
+# ██      ██    ██ ███████    ██    ██    ██ ██ ████ ██ ██   ███   █████
+# ██      ██    ██      ██    ██    ██    ██ ██  ██  ██ ██  ███    ██
+#  ██████  ██████  ███████    ██     ██████  ██      ██ ██ ███████ ███████
+
+SITENAME = " Inanis &#xe80a; Umbra"
+SUBTITLE = 'Within the shadows lies the honesty we seek yet fear the most. Oversharing &#xe813;'
+SIDEBAR_LINKS = (
+    ('Shadows',   ['cloud-moon-inv', 'moon'],       '/s/posts'),
+    ('Archive',   ['hourglass-o', 'hourglass'],     '/s/archives/'),
+    ('', '', ''),
+    ('About',     ['dot-circled', 'cloud-sun-inv'], '/s/about'),
+    # ('Gallery',    ['picture', 'eye-off', 'eye'], '/images'),
+    # ('', '', ''),
+    # ('Contact',    ['thumbs-up', 'hand-paper-o', 'hand-scissors-o', 'hand-grab-o'], '/contact')
+    # ('', '', ''),
+    # ('Liner Gaff', ['transgender-alt'], '/liner-gaff')
+)
+
 
 
 
@@ -117,3 +131,15 @@ PLUGINS = [
     'gallery',
     'date_utils'
 ]
+
+
+
+css_shadows = ['shadows/base.css']
+
+# LINER-GAFF
+asset_shadows_base = ('css-shadows-base',
+                css_shadows,
+                {'output': 'css/shadows.min.css', 'filters': 'yui_css'})
+
+
+ASSET_BUNDLES += [asset_shadows_base]

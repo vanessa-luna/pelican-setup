@@ -277,7 +277,7 @@ SIDEBAR_LINKS = (
     ('', '', ''),
     ('Gallery',    ['picture', 'eye-off', 'eye'], '/images'),
     ('', '', ''),
-    ('About',      ['dot-circled', 'sun-1', 'moon', 'cloud-moon-inv', 'cloud-sun-inv'], '/about'),
+    ('About',      ['dot-circled', 'sun-1'], '/about'),
     ('Contact',    ['thumbs-up', 'hand-paper-o', 'hand-scissors-o', 'hand-grab-o'], '/contact')
     # ('', '', ''),
     # ('Liner Gaff', ['transgender-alt'], '/liner-gaff')

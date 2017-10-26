@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'font-awesome-plus-min';
-  src: url('../font/font-awesome-plus-min.eot?78842869');
-  src: url('../font/font-awesome-plus-min.eot?78842869#iefix') format('embedded-opentype'),
-       url('../font/font-awesome-plus-min.woff2?78842869') format('woff2'),
-       url('../font/font-awesome-plus-min.woff?78842869') format('woff'),
-       url('../font/font-awesome-plus-min.ttf?78842869') format('truetype'),
-       url('../font/font-awesome-plus-min.svg?78842869#font-awesome-plus-min') format('svg');
+  src: url('../font/font-awesome-plus-min.eot?3403249');
+  src: url('../font/font-awesome-plus-min.eot?3403249#iefix') format('embedded-opentype'),
+       url('../font/font-awesome-plus-min.woff2?3403249') format('woff2'),
+       url('../font/font-awesome-plus-min.woff?3403249') format('woff'),
+       url('../font/font-awesome-plus-min.ttf?3403249') format('truetype'),
+       url('../font/font-awesome-plus-min.svg?3403249#font-awesome-plus-min') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'font-awesome-plus-min';
-    src: url('../font/font-awesome-plus-min.svg?78842869#font-awesome-plus-min') format('svg');
+    src: url('../font/font-awesome-plus-min.svg?3403249#font-awesome-plus-min') format('svg');
   }
 }
 */
@@ -98,9 +98,11 @@
 .fa-copyright:before { content: '\f1f9'; } /* '' */
 .fa-transgender-alt:before { content: '\f225'; } /* '' */
 .fa-battery-2:before { content: '\f242'; } /* '' */
+.fa-hourglass-o:before { content: '\f250'; } /* '' */
 .fa-hourglass-1:before { content: '\f251'; } /* '' */
 .fa-hourglass-2:before { content: '\f252'; } /* '' */
 .fa-hourglass-3:before { content: '\f253'; } /* '' */
+.fa-hourglass:before { content: '\f254'; } /* '' */
 .fa-hand-grab-o:before { content: '\f255'; } /* '' */
 .fa-hand-paper-o:before { content: '\f256'; } /* '' */
 .fa-hand-scissors-o:before { content: '\f257'; } /* '' */

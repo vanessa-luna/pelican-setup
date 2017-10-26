@@ -42,9 +42,11 @@
 .fa-copyright:before { content: '\f1f9'; } /* '' */
 .fa-transgender-alt:before { content: '\f225'; } /* '' */
 .fa-battery-2:before { content: '\f242'; } /* '' */
+.fa-hourglass-o:before { content: '\f250'; } /* '' */
 .fa-hourglass-1:before { content: '\f251'; } /* '' */
 .fa-hourglass-2:before { content: '\f252'; } /* '' */
 .fa-hourglass-3:before { content: '\f253'; } /* '' */
+.fa-hourglass:before { content: '\f254'; } /* '' */
 .fa-hand-grab-o:before { content: '\f255'; } /* '' */
 .fa-hand-paper-o:before { content: '\f256'; } /* '' */
 .fa-hand-scissors-o:before { content: '\f257'; } /* '' */

@@ -1,53 +1,52 @@
-	<div class="sidebar" id='sidebar' style="background-image:url('{{SITEURL}}/thumb/huge/{{ BG_GALLERY_NAME }}/{{ BG_NUM_IMAGES }}{{ BG_IMAGE_SUFFIX }}')">
-		<!-- dynamically load a different bg image -->
-		<script type="text/javascript">
-		    document.addEventListener("DOMContentLoaded", function (e) {
-				var sb = document.getElementById('sidebar');
-				var filename = "{{ BG_GALLERY_NAME }}/" + (parseInt((Math.random() * {{ BG_NUM_IMAGES }} ))) + "{{ BG_IMAGE_SUFFIX }})"
-				sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
-				sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
-		    });
-			function chooseIcon(list){
-				return list[parseInt(Math.random()*list.length)];
-			}
-		</script>
-		<div class="sidebar-holder">
-			<div class="headline">
-				<a id="secret" href='{{SIDEBAR_SECRET}}'></a>
-				<a id="home" href="/">
-					<img class="profile-picture" src="{{ SITEURL }}/images/{{ PROFILE_IMAGE }}"></img>
-					<h1>{{ SITENAME }}</h1>
-				</a>
-			</div>
-			<p class="subtitle">{{ SUBTITLE }}</p>
-			</div>
-			<nav class="menu">
-			{% for name, icon, link in SIDEBAR_LINKS %}
-				<div class="menu-item {{'spacer' if name == ''}}">
-				{% if name != '' %}
-					<a href="{{ link }}">
-						<div class="menu-item-content">
-							<div class='icon'>
-							{% if icon is iterable and icon is not string %}
-								<script type="text/javascript">
-									var {{name}}_icons = [];
-									{% for i in icon %}
-									{{name}}_icons[{{loop.index-1}}] = "{{i}}"
-									{% endfor %}
-									document.addEventListener("DOMContentLoaded", function (e) {
-										document.getElementById("icon-{{name}}").className = "fa fa-" +  chooseIcon({{name}}_icons);
-									});
-								</script>
-								{% set icon = icon[0] %}
-							{% endif %}
-								<i id="icon-{{name}}" class="fa fa-{{ icon }}"></i>
-							</div>
-							<span class='name'>{{ name }}</span>
-						</div>
-					</a>
-				{% endif %}
-				</div>
-			{% endfor %}
-			</nav>
+	<div class="sidebar">
+		<div class="sidebar" id='sidebar-bg' style="background-image:url('{{SITEURL}}/thumb/huge/{{ BG_GALLERY_NAME }}/{{ BG_NUM_IMAGES }}{{ BG_IMAGE_SUFFIX }}')">
+			<!-- dynamically load a different bg image -->
+			<script type="text/javascript">
+			    document.addEventListener("DOMContentLoaded", function (e) {
+					var sb = document.getElementById('sidebar-bg');
+					var filename = "{{ BG_GALLERY_NAME }}/" + (parseInt((Math.random() * {{ BG_NUM_IMAGES }} ))) + "{{ BG_IMAGE_SUFFIX }})"
+					sb.style.backgroundImage = imgUrlByHeight(filename, sb.clientHeight);
+					sb.style.backgroundPosition = parseInt((Math.random() * 100)) + "%";
+			    });
+				function chooseIcon(list){
+					return list[parseInt(Math.random()*list.length)];
+				}
+			</script>
 		</div>
+		<div class="headline">
+			<a id="secret" href='{{SIDEBAR_SECRET}}'></a>
+			<a id="home" href="/">
+				<img class="profile-picture" src="{{ SITEURL }}/images/{{ PROFILE_IMAGE }}"></img>
+				<h1>{{ SITENAME }}</h1>
+			</a>
+			<p class="subtitle">{{ SUBTITLE }}</p>
+		</div>
+		<nav class="menu">
+		{% for name, icon, link in SIDEBAR_LINKS %}
+			<div class="menu-item {{'spacer' if name == ''}}">
+			{% if name != '' %}
+				<a href="{{ link }}">
+					<div class="menu-item-content">
+						<div class='icon'>
+						{% if icon is iterable and icon is not string %}
+							<script type="text/javascript">
+								var {{name}}_icons = [];
+								{% for i in icon %}
+								{{name}}_icons[{{loop.index-1}}] = "{{i}}"
+								{% endfor %}
+								document.addEventListener("DOMContentLoaded", function (e) {
+									document.getElementById("icon-{{name}}").className = "fa fa-" +  chooseIcon({{name}}_icons);
+								});
+							</script>
+							{% set icon = icon[0] %}
+						{% endif %}
+							<i id="icon-{{name}}" class="fa fa-{{ icon }}"></i>
+						</div>
+						<span class='name'>{{ name }}</span>
+					</div>
+				</a>
+			{% endif %}
+			</div>
+		{% endfor %}
+		</nav>
 	</div>

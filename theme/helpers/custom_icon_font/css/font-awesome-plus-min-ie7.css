@@ -53,9 +53,11 @@
 .fa-copyright { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf1f9;&nbsp;'); }
 .fa-transgender-alt { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf225;&nbsp;'); }
 .fa-battery-2 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf242;&nbsp;'); }
+.fa-hourglass-o { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf250;&nbsp;'); }
 .fa-hourglass-1 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf251;&nbsp;'); }
 .fa-hourglass-2 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf252;&nbsp;'); }
 .fa-hourglass-3 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf253;&nbsp;'); }
+.fa-hourglass { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf254;&nbsp;'); }
 .fa-hand-grab-o { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf255;&nbsp;'); }
 .fa-hand-paper-o { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf256;&nbsp;'); }
 .fa-hand-scissors-o { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf257;&nbsp;'); }

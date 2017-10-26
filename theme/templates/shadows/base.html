@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
-	<title>{% block page_title %}{% endblock page_title %} | Vanessa & Luna</title>
+	<title>{% block page_title %}{% endblock page_title %} | Inanis Umbra</title>
 	{% include 'fragments/head.html' %}
 	{% include 'fragments/dynamic-image-chooser.js' %}
-
 	{% block assets %} {% endblock %}
+    {% assets "css-shadows-base" %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+    {% endassets %}
 </head>
 <body>
 	{% include 'fragments/sidebar.html' %}
-
 	<div class="content">
 		{% block title %} {% endblock %}
 		{% block content %} {% endblock %}
 		{% include 'fragments/footer.html' %}
-		
 	</div>
 </body>
 </html>
