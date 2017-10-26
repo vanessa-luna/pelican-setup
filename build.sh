@@ -26,8 +26,15 @@ $PELICAN -s $BLOG_CONF      -o $OUTPUTDIR $INPUTDIR
 # IF SEND IN OPTION DON'T GIT THAT SHIT...
 if [[ ($# -eq 0) ]]; then
     # git
-    cd .output
-    git add .
-    git commit -m "update"
+    cd $OUTPUTDIR
+    git commit -a -m "update"
+    git push
+
+    cd $BASEDIR
+    git commit -a -m "update"
+    git push
+
+    cd $INPUTDIR
+    git commit -a -m "update"
     git push
 fi

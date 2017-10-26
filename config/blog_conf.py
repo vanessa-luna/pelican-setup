@@ -29,14 +29,14 @@ from __future__ import unicode_literals
 SITENAME                   = u'Vanessa &#xe80a; Luna'
 SITEURL                    = 'https://vanessa-luna.github.io'
 
-PATH                       = 'content'
-OUTPUT_PATH                = '.output/'
+PATH                       = 'content/blog'
+OUTPUT_PATH                = '../.output/'
 PAGE_PATHS                 = ['pages']
-PAGE_EXCLUDES              = ['liner-gaff']
+PAGE_EXCLUDES              = []
 ARTICLE_PATHS              = ['posts']
-ARTICLE_EXCLUDES           = ['shadows']
+ARTICLE_EXCLUDES           = []
 STATIC_PATHS               = ['images']
-STATIC_EXCLUDES            = ['liner-gaff']
+STATIC_EXCLUDES            = []
 
 WITH_FUTURE_DATES          = False
 # SUMMARY_MAX_LENGTH         = 50

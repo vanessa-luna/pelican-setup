@@ -17,12 +17,14 @@ from blog_conf import *
 # ██   ██ ██      ██      ██   ██ ██    ██ ██      ██
 # ██████  ███████ ██      ██   ██  ██████  ███████ ██
 
-PAGE_PATHS = ['liner-gaff']
-PAGE_EXCLUDES = ['pages', 'posts', 'images']
-ARTICLE_PATHS = ['liner-gaff/posts']
-ARTICLE_EXCLUDES = ['posts']
-STATIC_PATHS = ['liner-gaff/assets']
-STATIC_EXCLUDES = ['images', 'liner-gaff', 'liner-gaff/assets/.raw']
+PATH             = 'content/liner-gaff'
+
+PAGE_PATHS       = ['pages']
+PAGE_EXCLUDES    = []
+ARTICLE_PATHS    = ['posts']
+ARTICLE_EXCLUDES = []
+STATIC_PATHS     = ['liner-gaff']
+STATIC_EXCLUDES  = ['liner-gaff/assets/.raw']
 
 
 
@@ -59,7 +61,7 @@ ARCHIVES_SAVE_AS       = 'liner-gaff/blog/archives/index.html'
 #    ██    ██   ██ ██      ██  ██  ██ ██
 #    ██    ██   ██ ███████ ██      ██ ███████
 
-THEME_STATIC_PATHS = []
+# THEME_STATIC_PATHS = ['theme']
 
 
 
@@ -131,11 +133,11 @@ COMMENTS_PAGE = "liner-gaff"
 # ██      ██      ██    ██ ██    ██ ██ ██  ██ ██      ██
 # ██      ███████  ██████   ██████  ██ ██   ████ ███████
 
- # turn off thumbnailer basically...?
 PLUGINS = [
     'summary',
     'liquid_tags.img',
     'liquid_tags.youtube',
+    'liquid_tags.vimeo',
     'liquid_tags.soundcloud',
     'extract_toc',
     'pelican-linkclass',

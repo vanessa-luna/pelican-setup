@@ -6,15 +6,20 @@ PELICAN=${PELICAN:-pelican}
 # important folders
 BASE_DIR=$(pwd)
 CONF_DIR=$BASE_DIR/config
+
 CONTENT_DIR=$BASE_DIR/content
+BLOG_INPUT_DIR=$CONTENT_DIR/blog
+LINERGAFF_INPUT_DIR=$CONTENT_DIR/liner-gaff
+SHADOWS_INPUT_DIR=$CONTENT_DIR/shadows
+
 PROD_OUTPUT_DIR=$BASE_DIR/.output
 DEV_OUTPUT_DIR=$BASE_DIR/.dev-output
 
 # config locations
-THUMBS_CONF=$CONF_DIR/thumbnail_conf.py
-LINERGAFF_CONF=$CONF_DIR/linergaff_conf_dev.py
-SHADOWS_CONF=$CONF_DIR/shadows_conf_dev.py
 BLOG_CONF=$CONF_DIR/blog_conf_dev.py
+SHADOWS_CONF=$CONF_DIR/shadows_conf_dev.py
+LINERGAFF_CONF=$CONF_DIR/linergaff_conf_dev.py
+THUMBS_CONF=$CONF_DIR/thumbnail_conf.py
 
 # PID management of running processes
 PID_DIR=$BASE_DIR/.cache
@@ -89,49 +94,41 @@ function alive() {
 # make sure it all started up
 
 function start_up(){
-    media
     shadows
     linergaff
     content
+    media
     serve
     did_start $blog_pid
-    did_start $linergaff_pid
     did_start $shadows_pid
+    did_start $linergaff_pid
     did_start $thumbs_pid
     did_start $srv_pid
 }
-function media() {
-    ln -fsr .output/images .dev-output/
-    # ln -fsr .output/images content/
-    ln -fsr .output/thumb .dev-output/
-
-    kill_pid $THUMBS_PID
-    $PELICAN --autoreload -r $CONTENT_DIR -o $PROD_OUTPUT_DIR -s $THUMBS_CONF &
-    thumbs_pid=$!
-    echo $thumbs_pid > $THUMBS_PID
+function content() {
+    $PELICAN -D -r -s $BLOG_CONF $BLOG_INPUT_DIR &
+    blog_pid=$!
+    echo $blog_pid > $BLOG_PID
 }
 function shadows() {
-    kill_pid $SHADOWS_PID
-    $PELICAN --debug --autoreload -r $CONTENT_DIR -o $DEV_OUTPUT_DIR -s $SHADOWS_CONF &
+    $PELICAN -D -r -s $SHADOWS_CONF $SHADOWS_INPUT_DIR &
     shadows_pid=$!
     echo $shadows_pid > $SHADOWS_PID
 }
 function linergaff() {
-    kill_pid $LINERGAFF_PID
-    $PELICAN --debug --autoreload -r $CONTENT_DIR -o $DEV_OUTPUT_DIR -s $LINERGAFF_CONF &
+    $PELICAN -D -r -s $LINERGAFF_CONF $LINERGAFF_INPUT_DIR &
     linergaff_pid=$!
     echo $linergaff_pid > $LINERGAFF_PID
 }
-
-function content() {
-    kill_pid $BLOG_PID
-    $PELICAN --debug --autoreload -r $CONTENT_DIR -o $DEV_OUTPUT_DIR -s $BLOG_CONF &
-    blog_pid=$!
-    echo $blog_pid > $BLOG_PID
+function media() {
+    # ln -fsr .output/images content/ # wish I could only have one copy
+    ln -fsr .output/images .dev-output/
+    ln -fsr .output/thumb .dev-output/
+    $PELICAN -D -r -s $THUMBS_CONF $BLOG_INPUT_DIR &
+    thumbs_pid=$!
+    echo $thumbs_pid > $THUMBS_PID
 }
-
 function serve () {
-    kill_pid $SRV_PID
     # move to output dir and start server
     mkdir -p $DEV_OUTPUT_DIR && cd $DEV_OUTPUT_DIR
     $PY -m pelican.server $port &
@@ -191,7 +188,6 @@ elif [[ $# -eq 1 ]]; then
         # MEDIA RUN
         media
         did_start $thumbs_pid
-        kill $THUMBS_PID
     fi
 else
     shut_down

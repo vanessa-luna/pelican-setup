@@ -21,12 +21,15 @@ from blog_conf import *
 # ██   ██ ██      ██      ██   ██ ██    ██ ██      ██
 # ██████  ███████ ██      ██   ██  ██████  ███████ ██
 
-PAGE_PATHS = ['']
-PAGE_EXCLUDES = ['pages', 'posts', 'liner-gaff', 'images', 'shadows']
-ARTICLE_PATHS = []
-ARTICLE_EXCLUDES = ['posts', 'shadows']
-STATIC_PATHS = []
-STATIC_EXCLUDES = ['images', 'liner-gaff']
+PATH             = 'content/blog'
+OUTPUT_PATH      = "../.output"
+
+PAGE_PATHS       = ['']
+PAGE_EXCLUDES    = ['pages']
+ARTICLE_PATHS    = []
+ARTICLE_EXCLUDES = ['posts']
+STATIC_PATHS     = []
+STATIC_EXCLUDES  = ['images']
 
 
 

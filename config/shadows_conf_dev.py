@@ -9,7 +9,7 @@ sys.path.append(os.path.dirname(__file__))
 from shadows_conf import *
 
 
-OUTPUT_PATH        = '.dev-output/'
+OUTPUT_PATH        = '../.dev-output/'
 SITEURL            = ''
 
 CACHE_CONTENT      = False

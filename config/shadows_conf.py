@@ -17,12 +17,14 @@ from blog_conf import *
 # ██   ██ ██      ██      ██   ██ ██    ██ ██      ██
 # ██████  ███████ ██      ██   ██  ██████  ███████ ██
 
-PAGE_PATHS = ['shadows/pages']
-PAGE_EXCLUDES = ['pages', 'posts', 'liner-gaff', 'images']
-ARTICLE_PATHS = ['shadows/shadows']
-ARTICLE_EXCLUDES = ['posts']
-STATIC_PATHS = []
-STATIC_EXCLUDES = ['images', 'liner-gaff']
+PATH             = 'content/shadows'
+
+PAGE_PATHS       = ['pages']
+PAGE_EXCLUDES    = []
+ARTICLE_PATHS    = ['shadows']
+ARTICLE_EXCLUDES = []
+STATIC_PATHS     = []
+STATIC_EXCLUDES  = []
 
 
 
