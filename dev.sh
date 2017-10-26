@@ -135,6 +135,13 @@ function serve () {
     srv_pid=$!
     echo $srv_pid > $SRV_PID
 }
+function serve_prod () {
+    # move to output dir and start server
+    mkdir -p $PROD_OUTPUT_DIR && cd $PROD_OUTPUT_DIR
+    $PY -m pelican.server $port &
+    srv_pid=$!
+    echo $srv_pid > $SRV_PID
+}
 
 
 function did_start() {
@@ -188,7 +195,12 @@ elif [[ $# -eq 1 ]]; then
         # MEDIA RUN
         media
         did_start $thumbs_pid
+    elif [[ $1 == 'p' ]]; then
+        # PRODUCTION SERVE
+        serve_prod
+        did_start $srv_pid
     fi
+
 else
     shut_down
     serve
