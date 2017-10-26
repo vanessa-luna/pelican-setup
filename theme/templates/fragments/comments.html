@@ -1,10 +1,62 @@
 
 {% if COMMENTS_PAGE %}
-<!-- begin wwww.htmlcommentbox.com -->
-<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
-<script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} ;(function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17166&num=7&ts=1508945733232");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-<!-- end www.htmlcommentbox.com -->
+<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... I hope ;)</div>
+<script>
+hcb_user = {
+    no_comments_msg: 'Be the first to leave a comment',
+    // submit form
+    comments_header : 'Comments',
+    name_label : 'Name (optional)',
+    email_label:'Email (optional)',
+    website_label:'Website (optional)',
+    content_label: 'Message',
+    submit : 'Submit',
+    add:'Leave a comment',
+    again: 'Post another comment',
+    subscribe:'subscribe (email updates)',
+    // user actions
+    logout_link : '<img title="log out" src="//www.htmlcommentbox.com/static/images/door_out.png" alt="[logout]" class="hcb-icon"/>',
+    admin_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    del_link : '<img src="//www.htmlcommentbox.com/static/images/door_in.png" alt="[login]" class="hcb-icon"/>',
+    rss:'<img src="//www.htmlcommentbox.com/static/images/feed.png" class="hcb-icon" alt="rss"/> ',
+    // comment body
+    said:'',
+    anonymous:'anon',
+    mod_label:'(owner)',
+    // dates
+    days_ago:'days',
+    hours_ago:'hours',
+    minutes_ago:'mins',
+    within_the_last_minute:'<1 min',
+    // comment actions
+    reply:"<i class='fa fa-reply'></i> reply",
+    flag:"<i class='fa fa-flag-filled'></i> flag",
+    like:"",//"<i class='fa fa-thumbs-up-1'></i> like",
+    are_you_sure:'Really flag this comment as inappropriate?',
+    // pagination
+    prev_page: "<a><i class='fa fa-angle-double-left'></i> Newer </a>",
+    showing:'comments',
+    to:'-',
+    next_page: "<a> Older <i class='fa fa-angle-double-right'></i> </a>",
 
+    msg_thankyou:'<span class="success-span">You left a comment!</span>',
+    msg_approval:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+    msg_approval_required:'<span class="info-span">Thank you for commenting! Your comment will appear once approved by a moderator.</span>',
+
+    err_bad_html:'<span class="warning-span">Your comment contained bad html.</span>',
+    err_bad_email:'<span class="warning-span">Please enter a valid email address.</span>',
+    err_too_frequent:'<span class="warning-span">You must wait a few seconds between posting comments.</span>',
+    err_comment_empty:'<span class="warning-span">Cannot leave empty comments!</span>',
+    err_denied:'<span class="success">Your comment was not accepted.</span>',
+
+    //SETTINGS
+    MAX_CHARS: 8192,
+    PAGE:"{{article.url}}",
+    RELATIVE_DATES:true
+};
+</script>
+<script type="text/javascript" id="hcb"> /*<!--*/
+    if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24aIzV1Bc59Aa3mSLIqa22X%2F"+"&opts=17167&num=5&ts=1508972406887");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
 <noscript>
     <style>#HCB_comment_box { display:none;}</style>
     <div>

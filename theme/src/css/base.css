@@ -155,6 +155,7 @@ textarea {
 
 
 
+
 .fa-star:before { content: '\e800'; } /* '' */
 .fa-heart:before { content: '\e801'; } /* '' */
 .fa-picture:before { content: '\e802'; } /* '' */
@@ -173,12 +174,18 @@ textarea {
 .fa-moon-1:before { content: '\e80f'; } /* '' */
 .fa-cloud-sun-inv:before { content: '\e810'; } /* '' */
 .fa-feather:before { content: '\e811'; } /* '' */
+.fa-flag-filled:before { content: '\e812'; } /* '' */
+.fa-thumbs-up-1:before { content: '\e813'; } /* '' */
+.fa-reply:before { content: '\e814'; } /* '' */
 .fa-tree-2:before { content: '\e83f'; } /* '' */
 .fa-link-ext:before { content: '\f08e'; } /* '' */
 .fa-rss:before { content: '\f09e'; } /* '' */
 .fa-menu:before { content: '\f0c9'; } /* '' */
 .fa-sort-down:before { content: '\f0dd'; } /* '' */
 .fa-fighter-jet:before { content: '\f0fb'; } /* '' */
+.fa-angle-double-left:before { content: '\f100'; } /* '' */
+.fa-angle-double-right:before { content: '\f101'; } /* '' */
+.fa-angle-double-up:before { content: '\f102'; } /* '' */
 .fa-angle-double-down:before { content: '\f103'; } /* '' */
 .fa-laptop:before { content: '\f109'; } /* '' */
 .fa-rocket:before { content: '\f135'; } /* '' */
@@ -200,8 +207,6 @@ textarea {
 .fa-hand-scissors-o:before { content: '\f257'; } /* '' */
 .fa-question-circle-o:before { content: '\f29c'; } /* '' */
 .fa-twitter-bird:before { content: '\f303'; } /* '' */
-
-
 
 
 /*
@@ -260,6 +265,28 @@ textarea {
 }
 
 
+
+.warning-block {
+    margin-left: 2rem;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    color: #e0003c;
+    border-left: 3px solid #e0003c;
+}
+
+/* to make redish text */
+.warning-span {
+    color: #e0003c;
+}
+.success-span {
+    color: #0ce061;
+}
+.info-span {
+    color:#09b5dc;
+}
+
+
 /*
 ██████   ██████  ██   ██
 ██   ██ ██    ██  ██ ██
@@ -274,30 +301,32 @@ textarea {
     If Anchor tag, border is changed, font color is changed, background highlight is changed.
 */
 
-.box {
+.box, .btn {
     background-color: white;
     border: 1px solid #333;
     border-radius: 4px;
 }
-.box:hover {
+.box:hover, .btn:hover {
     text-decoration: none;
     background-color: #f7e8e8;
 }
 .empty-box { visibility: hidden; }
 
 /* INLINE BOXES */
-span.box, a.box, .inline.box {
+span.box, a.box, .inline.box,
+span.btn, a.btn, .inline.btn {
     padding: 0 .5em;
 }
 /* BLOCK BOXES */
-div.box, .block.box, .inline-block.box  {
+div.box, .block.box, .inline-block.box,
+div.btn, .block.btn, .inline-block.btn  {
     text-align: center;
     padding: 1em;
     margin-bottom: 1em;
 }
 
 /* SPECIAL BOXES */
-a.box {
+a.box, a.btn {
     color: #e78d9f;
     text-decoration: none;
     border-color: #e78d9f;

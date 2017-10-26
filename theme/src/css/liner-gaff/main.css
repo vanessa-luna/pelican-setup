@@ -201,19 +201,7 @@ ul li { padding-top: .2rem; padding-bottom: .2rem; }
 
 
 
-.warning-block {
-    margin-left: 2rem;
-    padding-left: 2rem;
-    margin-bottom: 2rem;
-    font-style: italic;
-    color: #e0003c;
-    border-left: 3px solid #e0003c;
-}
 
-/* to make redish text */
-.warning-span {
-    color: #e0003c;
-}
 
 
 /*

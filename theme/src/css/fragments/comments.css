@@ -8,13 +8,20 @@
 
 
 
-#hcb_msg { display:none;}
-
-#HCB_comment_box #HCB_comment_form_box {
-    font-size: .8rem;
-    margin-bottom: 1em;
+#hcb_msg {
+    text-align: center;
 }
 
+
+/*
+███████  ██████  ██████  ███    ███
+██      ██    ██ ██   ██ ████  ████
+█████   ██    ██ ██████  ██ ████ ██
+██      ██    ██ ██   ██ ██  ██  ██
+██       ██████  ██   ██ ██      ██
+*/
+
+#HCB_comment_box #HCB_comment_form_box { font-size: .9rem; }
 
 #HCB_comment_form_box input, #HCB_comment_form_box textarea {
     margin-bottom: .5em;
@@ -24,11 +31,46 @@
     display: inline-block;
     width: 50%;
 }
-
 #HCB_comment_form_box .hcb-wrapper-half:first-of-type {
     width: calc(50% - .5em);
     margin-right: .5em;
 }
+
+
+#HCB_comment_form_box .btn {
+    display:block;
+    position: relative;
+    padding: 1em;
+    text-align: center;
+}
+#HCB_comment_form_box .btn:before,
+#HCB_comment_form_box .btn:after {
+    content: "\e80f";
+    position: absolute;
+    top:.5em;
+    font-size: 1.5em;
+}
+#HCB_comment_form_box .btn:before { margin-left: -1.5em; }
+#HCB_comment_form_box .btn:after { margin-left: .25rem; }
+
+@media (max-width: 599px) {
+    #HCB_comment_form_box .hcb-wrapper-half, #HCB_comment_form_box .hcb-wrapper-half:first-of-type {
+        display: block;
+        width: 100%;
+    }
+}
+
+
+
+
+/*
+███████ ██   ██ ████████ ██████   █████  ███████
+██       ██ ██     ██    ██   ██ ██   ██ ██
+█████     ███      ██    ██████  ███████ ███████
+██       ██ ██     ██    ██   ██ ██   ██      ██
+███████ ██   ██    ██    ██   ██ ██   ██ ███████
+*/
+
 
 /* PUT HTMLCCOMENT BOX LINK ON RIGHT */
 .home-desc { display:none;}
@@ -51,43 +93,90 @@
 small { display:none; }
 
 
-@media (max-width: 599px) {
-    #HCB_comment_form_box .hcb-wrapper-half, #HCB_comment_form_box .hcb-wrapper-half:first-of-type {
-        display: block;
-        width: 100%;
-    }
+
+
+
+
+/*
+ ██████  ██████  ███    ███ ███    ███ ███████ ███    ██ ████████
+██      ██    ██ ████  ████ ████  ████ ██      ████   ██    ██
+██      ██    ██ ██ ████ ██ ██ ████ ██ █████   ██ ██  ██    ██
+██      ██    ██ ██  ██  ██ ██  ██  ██ ██      ██  ██ ██    ██
+ ██████  ██████  ██      ██ ██      ██ ███████ ██   ████    ██
+*/
+
+
+#no_comments { text-align: center; }
+#no_comments:before, #no_comments:after {
+    content: "\e80b";
+    margin: 0 .25rem;
 }
 
 
 
+#HCB_comment_box .comment:nth-child(2n) { background-color: #f6f6f6; }
+#HCB_comment_box .comment:hover { background-color: #eee; }
+#HCB_comment_box .comment { padding: .5em; }
 
-#comments_list { font-size: .9rem; }
-
-#comments_list .comment:nth-child(2n) {
-    background-color: #f6f6f6;
-}
-#comments_list .comment:hover {
-    background-color: #eee;
-}
-#comments_list .comment { padding: .5em 0; }
-#HCB_comment_box .comment .date { font-size: .9em;}
+#HCB_comment_box .comment .date { float:right; font-size: .9em;}
 #HCB_comment_box .comment .author-name { font-size: 1.1em;}
+#HCB_comment_box .comment .author-email { color: #aaa; font-size: .8em;}
+#HCB_comment_box .comment .hcb-mod .author-name { color: #e0003c; }
+#HCB_comment_box .comment .hcb-mod + blockquote { border-color: #e0003c; }
 
-#HCB_comment_box .comment .hcb-comment-tb a img {
-    display: inline-block;
-    margin: 0 .25em;
+#HCB_comment_box blockquote {
+    margin: .25em 1em !important;
 }
 
+#HCB_comment_box .comment .del { float:right; }
 
 
 @media (max-width: 599px) {
     #HCB_comment_box .comment {
         margin-bottom: 1em;
+        padding-left: 0;
     }
     #comments_list .comment:nth-child(2n) {
         background-color: #f2f2f2;
     }
+    #HCB_comment_box blockquote { margin: .25em .5em !important; }
+    #HCB_comment_box .comment .hcb-comment-tb { text-align: right;}
     #HCB_comment_box .comment .hcb-comment-tb a {
         visibility: visible !important;
     }
 }
+
+/*
+ █████   ██████ ████████ ██  ██████  ███    ██ ███████
+██   ██ ██         ██    ██ ██    ██ ████   ██ ██
+███████ ██         ██    ██ ██    ██ ██ ██  ██ ███████
+██   ██ ██         ██    ██ ██    ██ ██  ██ ██      ██
+██   ██  ██████    ██    ██  ██████  ██   ████ ███████
+*/
+
+
+#HCB_comment_box .comment .hcb-comment-tb > * { margin: 0 .5em; }
+#HCB_comment_box .comment .hcb-comment-tb .hcb-like { display:none; }
+#HCB_comment_box .comment .hcb-comment-tb a i {
+    display: inline-block;
+    margin: 0 .25em 0 0 ;
+}
+
+
+@media (max-width: 599px) {
+    #HCB_comment_box .comment .hcb-comment-tb { text-align: right;}
+    #HCB_comment_box .comment .hcb-comment-tb a {
+        visibility: visible !important;
+    }
+}
+
+/*
+██████   █████   ██████  ██ ███    ██  ██████
+██   ██ ██   ██ ██       ██ ████   ██ ██
+██████  ███████ ██   ███ ██ ██ ██  ██ ██   ███
+██      ██   ██ ██    ██ ██ ██  ██ ██ ██    ██
+██      ██   ██  ██████  ██ ██   ████  ██████
+*/
+
+
+#comments_list + p { text-align: center;}
