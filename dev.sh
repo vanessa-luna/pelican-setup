@@ -53,29 +53,27 @@ function usage(){
 # load up each .pid file and shut them down
 
 function shut_down(){
-  kill_pid $SRV_PID
-  kill_pid $BLOG_PID
-  kill_pid $LINERGAFF_PID
-  kill_pid $SHADOWS_PID
-  kill_pid $THUMBS_PID
+    kill_pid $SRV_PID
+    kill_pid $BLOG_PID
+    kill_pid $LINERGAFF_PID
+    kill_pid $SHADOWS_PID
+    kill_pid $THUMBS_PID
 }
 
 function kill_pid {
     pid=$(cat $1)
     if [[ $? -eq 0 ]]; then
-      if alive $pid; then
-        echo "Stopping " $1
-        kill $pid
-      else
-        echo "Stale PID, deleting" $1
-      fi
-      rm $1
-    else
-      echo $1 " file not found"
+        if alive $pid; then
+            echo "Stopping " $1
+            kill $pid
+        else
+            echo "Stale PID, deleting" $1
+        fi
+        rm $1
     fi
 }
 function alive() {
-  kill -0 $1 >/dev/null 2>&1
+    kill -0 $1 >/dev/null 2>&1
 }
 
 
@@ -91,20 +89,16 @@ function alive() {
 # make sure it all started up
 
 function start_up(){
-  echo "Starting up Pelican and HTTP server"
-  shift
-  media
-  shadows
-  linergaff
-  content
-  serve
-  # ensure stuff started
-  did_start $blog_pid
-  did_start $linergaff_pid
-  did_start $shadows_pid
-  did_start $thumbs_pid
-  did_start $srv_pid
-
+    media
+    shadows
+    linergaff
+    content
+    serve
+    did_start $blog_pid
+    did_start $linergaff_pid
+    did_start $shadows_pid
+    did_start $thumbs_pid
+    did_start $srv_pid
 }
 function media() {
     ln -fsr .output/images .dev-output/
@@ -151,6 +145,8 @@ function did_start() {
     if ! alive $1 ; then
         echo "something didn't start"
         return 1
+    else
+        echo "started okay" $1
     fi
 }
 
@@ -198,7 +194,7 @@ elif [[ $# -eq 1 ]]; then
         kill $THUMBS_PID
     fi
 else
-  shut_down
-  serve
-  did_start $srv_pid
+    shut_down
+    serve
+    did_start $srv_pid
 fi
