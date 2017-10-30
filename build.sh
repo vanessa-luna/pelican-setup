@@ -23,7 +23,7 @@ THUMBS_CONF=$CONFDIR/thumbnail_conf.py
 $PELICAN -s $THUMBS_CONF
 $PELICAN -s $LINERGAFF_CONF
 $PELICAN -s $SHADOWS_CONF
-$PELICAN -s $BLOG_CONF      
+$PELICAN -s $BLOG_CONF
 
 
 
@@ -31,14 +31,6 @@ $PELICAN -s $BLOG_CONF
 if [[ ($# -eq 0) ]]; then
     # git
     cd $OUTPUTDIR
-    git commit -a -m "update"
-    git push
-
-    cd $BASEDIR
-    git commit -a -m "update"
-    git push
-
-    cd $INPUTDIR
     git commit -a -m "update"
     git push
 fi

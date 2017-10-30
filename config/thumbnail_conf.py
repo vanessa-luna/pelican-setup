@@ -25,9 +25,9 @@ from blog_conf import *
 OUTPUT_PATH      = "../.output"
 
 PAGE_PATHS       = ['']
-PAGE_EXCLUDES    = ['pages']
+PAGE_EXCLUDES    = ['pages', 'posts']
 ARTICLE_PATHS    = []
-ARTICLE_EXCLUDES = ['posts']
+ARTICLE_EXCLUDES = ['posts', 'pages']
 STATIC_PATHS     = []
 STATIC_EXCLUDES  = ['images']
 
