@@ -23,6 +23,7 @@ I have had to do a few things such as:
 
 ## TOC
 
+* [Compiling](#compiling)
 * Scripts
     * build.sh
     * dev.sh
@@ -37,6 +38,19 @@ I have had to do a few things such as:
     * Templates
     * CSS
 
+
+
+
+## Compiling
+
+1. Install Pelican
+2. Download this repo into a folder
+3. Clone the [content repo](https://github.com/vanessa-luna/site-content) in content/
+4. Download the raw media here, and place within respective content folders
+5. run ./dev for local testing
+6. run ./build.sh to compile
+
+The raw media is kept in a Mega cloud account. Unfortunately I do not have a better way of storing these files right now. But they are there.
 
 
 

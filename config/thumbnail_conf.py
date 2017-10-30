@@ -8,11 +8,10 @@ sys.path.append(os.path.dirname(__file__))
 from blog_conf import *
 
 
-# IMAGES will be copied over
 # Thumbnailer will run
 # NOTHING ELSE
 #
-# No Other Confs should deal with images or thumbs
+# No Other Confs should deal with thumbs for blog
 
 
 # ██████  ███████ ███████  █████  ██    ██ ██   ████████
