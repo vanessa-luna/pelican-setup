@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block assets %}
+  {% assets "css-gallery" %}
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+  {% endassets %}
+  {% assets "js-gallery" %}
+  <script type="text/javascript" src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
+  {% endassets %}
+{% endblock %}
+
+
+{% block page_title %}Gallery{% endblock %}
+
+{% block content %}
+  <script type="text/javascript">
+    function escClose(e) {if (e.keyCode == 27) { closeGallery(); }}
+    function closeGallery() {
+      $('#fotorama').data('fotorama').destroy();
+      $('body').css('overflow', 'auto');
+      $('#fullscreen').css("display","none");
+      $(document).off('keyup', '', escClose);
+    }
+    function openGallery(album, items, index) {
+      $('#fullscreen').css("display","block");
+      $('body').css('overflow', 'hidden');
+      $(document).keyup(escClose);
+
+      var foto_div = $('#fotorama').fotorama({
+        width: '100%',
+        height: '100%',
+        nav:'thumbs',
+        navposition: 'bottom',
+        navwidth: '90%',
+        keyboard: true,
+        thumbheight: '5vh',
+        thumbwidth: '5vh'
+      });
+      var foto_api = foto_div.data('fotorama');
+      foto_api.load(items);
+      foto_api.show(index);
+    }
+  </script>
+
+<div class="page pad-content">
+  <div id='fullscreen'>
+    <div class='close' onclick='closeGallery()'><i class="fa fa-close"></i> </div>
+    <div id='fotorama' class='fotorama' data-auto='false'></div>
+  </div>
+
+  <div style="font-size:2rem; font-weight:bold;">All images</div>
+  <br><sub>*thumbnails are loaded first, full size only if clicked on<br>
+  ** back button on mobile does not close the fullscreen view<br> I'm still working on this page sorry!</sub><br>
+
+
+  {{ page.content }}
+
+  {% for album, images in page.gallery.iteritems() %}
+
+    {% set var_prefix = album | replace('-', '_') %}
+
+    <br>
+    <h2>{{ album | replace('-', ' ') }}</h2>
+
+    <div class='album' id="{{album}}">
+      <script type="text/javascript"> var {{var_prefix}}_items = []; </script>
+      {% for image in images %}
+        <script type="text/javascript">
+          {{var_prefix}}_items [{{loop.index-1}}] = {
+            img: '{{SITEURL}}/{{GALLERY_PATH}}/{{album}}/{{image}}',
+            thumb: '{{ SITEURL }}/thumb/tiny/{{album}}/{{ image }}'
+          }
+        </script>
+        <div class='album-image'>
+          <img class="fig-img" style="cursor:pointer;"
+              onclick="openGallery('{{album}}', {{var_prefix}}_items, {{loop.index-1}})"
+              src="{{ SITEURL }}/thumb/tiny/{{album}}/{{ image }}"></img>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

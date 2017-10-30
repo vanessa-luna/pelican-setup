@@ -29,7 +29,7 @@ from __future__ import unicode_literals
 SITENAME                   = u'Vanessa &#xe80a; Luna'
 SITEURL                    = 'https://vanessa-luna.github.io'
 
-PATH                       = 'content/blog'
+PATH                       = '../content/blog'
 OUTPUT_PATH                = '../.output/'
 PAGE_PATHS                 = ['pages']
 PAGE_EXCLUDES              = []
@@ -356,8 +356,8 @@ css_linergaff = css_content + ['fragments/forms.css', 'liner-gaff/main.css', 'li
     'liner-gaff/guides.css']
 
 
-css_gallery = ['fotorama/fotorama.css', 'fragments/gallery.css']
-js_gallery = ['jquery/jquery.min.js', 'fotorama/fotorama.js']
+css_gallery = ['fragments/gallery.css']
+# js_gallery = ['jquery/jquery.min.js', 'fotorama/fotorama.js']
 
 css_photoswipe = ['photoswipe/photoswipe.css', 'photoswipe/default-skin/default-skin.css']
 js_photoswipe = ['photoswipe/photoswipe.min.js']
@@ -371,8 +371,8 @@ asset_base = ('css-base', css_base,
             { 'output': 'css/base.min.css', 'filters': 'yui_css' })
 asset_fragment_gallery = ('css-fragment-gallery', css_gallery,
             {'output': 'css/fragments/gallery-fragment.min.css', 'filters': 'yui_css'})
-asset_fragment_gallery_js = ('js-gallery', js_gallery,
-                {'output':'js/gallery.js'})
+# asset_fragment_gallery_js = ('js-gallery', js_gallery,
+                # {'output':'js/gallery.js'})
 asset_fragment_photoswipe = ('css-fragment-photoswipe', css_photoswipe,
             {'output': 'css/fragments/photoswipe.min.css', 'filters': 'yui_css'})
 asset_fragment_photoswipe_js = ('js-photoswipe', js_photoswipe,
@@ -408,7 +408,9 @@ asset_page = ('css-page',
 asset_page_gallery = ('css-gallery',
             css_base + css_gallery + ['gallery.css'],
             {'output': 'css/gallery.min.css', 'filters': 'yui_css'})
-
+asset_article_gallery = ('css-article-gallery',
+            ['gallery.css'],
+            {'output': 'css/gallery-article.min.css', 'filters': 'yui_css'})
 
 # LINER-GAFF
 asset_linergaff_base = ('css-liner-gaff',
@@ -426,7 +428,8 @@ ASSET_BUNDLES = [
     asset_archives,
     asset_page,
     asset_page_gallery,
-    asset_fragment_gallery_js,
+    asset_article_gallery,
+    # asset_fragment_gallery_js,
     asset_fragment_photoswipe,
     asset_fragment_photoswipe_js,
     asset_fragment_photoswipe_js_ui,

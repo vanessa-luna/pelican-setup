@@ -17,7 +17,7 @@ from blog_conf import *
 # ██   ██ ██      ██      ██   ██ ██    ██ ██      ██
 # ██████  ███████ ██      ██   ██  ██████  ███████ ██
 
-PATH             = 'content/liner-gaff'
+PATH             = '../content/liner-gaff'
 
 PAGE_PATHS       = ['pages']
 PAGE_EXCLUDES    = []

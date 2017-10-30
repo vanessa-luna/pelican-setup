@@ -106,17 +106,17 @@ function start_up(){
     did_start $srv_pid
 }
 function content() {
-    $PELICAN -D -r -s $BLOG_CONF $BLOG_INPUT_DIR &
+    $PELICAN -D -r -s $BLOG_CONF &
     blog_pid=$!
     echo $blog_pid > $BLOG_PID
 }
 function shadows() {
-    $PELICAN -D -r -s $SHADOWS_CONF $SHADOWS_INPUT_DIR &
+    $PELICAN -D -r -s $SHADOWS_CONF &
     shadows_pid=$!
     echo $shadows_pid > $SHADOWS_PID
 }
 function linergaff() {
-    $PELICAN -D -r -s $LINERGAFF_CONF $LINERGAFF_INPUT_DIR &
+    $PELICAN -D -r -s $LINERGAFF_CONF &
     linergaff_pid=$!
     echo $linergaff_pid > $LINERGAFF_PID
 }
@@ -124,7 +124,7 @@ function media() {
     # ln -fsr .output/images content/ # wish I could only have one copy
     ln -fsr .output/images .dev-output/
     ln -fsr .output/thumb .dev-output/
-    $PELICAN -D -r -s $THUMBS_CONF $BLOG_INPUT_DIR &
+    $PELICAN -D -r -s $THUMBS_CONF &
     thumbs_pid=$!
     echo $thumbs_pid > $THUMBS_PID
 }

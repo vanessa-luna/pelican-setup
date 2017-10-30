@@ -1,0 +1,37 @@
+
+{% if article.galleryimages is defined and article.galleryimages|length > 0 %}
+
+<noscript>
+    <div class="warning-block">
+        Enable javascript to use the fancy gallery viewer.<br>
+        Instead, clicking an image will load the image in a new page.
+    </div>
+</noscript>
+<div class='album' id="{{article.album}}">
+  {% for image in article.galleryimages %}
+    <div class='album-image'>
+        <noscript> <a href="{{SITEURL}}/{{GALLERY_PATH}}/{{article.album}}/{{image}}"> </noscript>
+        <img class="fig-img" style="cursor:pointer;"
+          onclick="initGallery(items, {{loop.index-1}})"
+          src="{{ SITEURL }}/thumb/small/{{article.album}}/{{ image }}">
+        <noscript></a></noscript>
+    </div>
+  {% endfor %}
+</div>
+
+
+{% assets "css-article-gallery" %}
+<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+{% endassets %}
+
+<script>
+    var items = []
+    {% for image in article.galleryimages %}
+      items [{{loop.index-1}}] = {
+        src: '{{ SITEURL }}/{{ GALLERY_PATH }}/{{ article.album }}/{{ image }}', msrc: '{{ SITEURL }}/thumb/small/{{article.album}}/{{ image }}', doGetSlideDimensions: true, w: 300, h:200 }
+    {% endfor %}
+</script>
+
+{% include "fragments/photoswipe.html" %}
+
+{% endif %}

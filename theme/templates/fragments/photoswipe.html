@@ -1,26 +1,3 @@
-
-{% if article.galleryimages is defined and article.galleryimages|length > 0 %}
-
-<noscript>
-    <div class="warning-block">
-        Enable javascript to use the fancy gallery viewer.<br>
-        Instead, clicking an image will load the image in a new page.
-    </div>
-</noscript>
-<div class='album' id="{{article.album}}">
-  {% for image in article.galleryimages %}
-    <div class='album-image'>
-        <noscript> <a href="{{SITEURL}}/{{GALLERY_PATH}}/{{article.album}}/{{image}}"> </noscript>
-        <img class="fig-img" style="cursor:pointer;"
-          onclick="initGallery(items, {{loop.index-1}})"
-          src="{{ SITEURL }}/thumb/small/{{article.album}}/{{ image }}">
-        <noscript></a><noscript>
-    </div>
-  {% endfor %}
-</div>
-{% assets "css-gallery" %}
-<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
-{% endassets %}
 {% assets "js-photoswipe" %}
     <script type="text/javascript" src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
 {% endassets %}
@@ -32,20 +9,14 @@
 {% endassets %}
 
 <style>
-.pswp__top-bar {
-    width:inherit;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-.pswp__counter { position: static; }
-.pswp img { max-height: 100vh; }
+    .pswp__top-bar {
+        width:inherit;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .pswp__counter { position: static; }
+    .pswp img { max-height: 100vh; }
 </style>
 <script>
-    // create array of items for photoswipe
-    var items = []
-    {% for image in article.galleryimages %}
-      items [{{loop.index-1}}] = {
-        src: '{{ SITEURL }}/{{ GALLERY_PATH }}/{{ article.album }}/{{ image }}', msrc: '{{ SITEURL }}/thumb/small/{{article.album}}/{{ image }}', doGetSlideDimensions: true, w: 300, h:200 }
-    {% endfor %}
     // call when you want to open the gallery
     var photoswipe;
     function initGallery(items, index) {
@@ -53,7 +24,7 @@
         var pswpElement = document.querySelectorAll('.pswp')[0];
         photoswipe = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
         photoswipe.listen("gettingData", function(index, slide){
-            if (slide.doGetSlideDimensions) { setTimeout(function(){ getSlideDimensions(slide); } ,300); }
+            if (slide.doGetSlideDimensions) { setTimeout(function(){ getSlideDimensions(slide); } ,100); }
         });
         photoswipe.listen("imageLoadComplete", function(index, slide){ if (slide.doGetSlideDimensions) getSlideDimensions(slide); });
         photoswipe.init();
@@ -74,6 +45,3 @@
     }
 </script>
 <div class=pswp aria-hidden=true role=dialog tabindex=-1><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close"title="Close (Esc)"></button> <button class="pswp__button pswp__button--share"title=Share></button> <button class="pswp__button pswp__button--fs"title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom"title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left"title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right"title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div>
-
-
-{% endif %}

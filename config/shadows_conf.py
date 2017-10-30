@@ -17,7 +17,7 @@ from blog_conf import *
 # ██   ██ ██      ██      ██   ██ ██    ██ ██      ██
 # ██████  ███████ ██      ██   ██  ██████  ███████ ██
 
-PATH             = 'content/shadows'
+PATH             = '../content/shadows'
 
 PAGE_PATHS       = ['pages']
 PAGE_EXCLUDES    = []

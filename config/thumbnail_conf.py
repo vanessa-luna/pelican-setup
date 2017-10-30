@@ -21,7 +21,7 @@ from blog_conf import *
 # ██   ██ ██      ██      ██   ██ ██    ██ ██      ██
 # ██████  ███████ ██      ██   ██  ██████  ███████ ██
 
-PATH             = 'content/blog'
+# PATH             = '../content/blog'
 OUTPUT_PATH      = "../.output"
 
 PAGE_PATHS       = ['']
