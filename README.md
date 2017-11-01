@@ -24,17 +24,17 @@ I have had to do a few things such as:
 ## TOC
 
 * [Compiling](#compiling)
-* Scripts
+* [Scripts](#scripts)
     * build.sh
     * dev.sh
-* Pelican tweaks
-* Configs
-    * referencing inherited Configs
-    * each config's uniqueness
-* Plugins
+* [Pelican tweaks](#pelican-tweaks)
+* [Configs](#configs)
+    * Referencing inherited Configs
+    * Each config's uniqueness
+* [Plugins](#plugins)
     * Using each plugin
-    * tweaks made to plugins
-* Theme
+    * Tweaks made to plugins
+* [Theme](#theme)
     * Templates
     * CSS
 
@@ -45,8 +45,8 @@ I have had to do a few things such as:
 
 1. Install Pelican
 2. Download this repo into a folder
-3. Clone the [content repo](https://github.com/vanessa-luna/site-content) in content/
-4. Download the raw media here, and place within respective content folders
+3. Clone the [content repo](https://github.com/vanessa-luna/site-content) into `content/`
+4. Download the [raw media here](https://mega.nz/#F!g2ggCToJ!hWt-agf2ojC1sZPg471oMA), and place within respective content folders
 5. run ./dev for local testing
 6. run ./build.sh to compile
 
