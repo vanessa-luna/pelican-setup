@@ -31,6 +31,7 @@ $PELICAN -s $BLOG_CONF
 if [[ ($# -eq 0) ]]; then
     # git
     cd $OUTPUTDIR
-    git commit -a -m "update"
+    git add .
+    git commit -m "update"
     git push
 fi
