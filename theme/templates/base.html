@@ -3,9 +3,10 @@
 <head>
 	<title>{% block page_title %}{% endblock page_title %} | Vanessa & Luna</title>
 	{% include 'fragments/head.html' %}
+	{% block assets %} {% endblock %}
+	
 	{% include 'fragments/dynamic-image-chooser.js' %}
 
-	{% block assets %} {% endblock %}
 </head>
 <body>
 	{% include 'fragments/sidebar.html' %}
@@ -14,7 +15,7 @@
 		{% block title %} {% endblock %}
 		{% block content %} {% endblock %}
 		{% include 'fragments/footer.html' %}
-		
+
 	</div>
 </body>
 </html>

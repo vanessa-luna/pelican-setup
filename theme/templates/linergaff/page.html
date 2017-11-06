@@ -4,14 +4,14 @@
 	<title>{{page.title}} | Liner Gaff</title>
 	{% include 'fragments/head.html' %}
 	{% block assets %}
-		{% assets "css-liner-gaff" %}
+		{% assets "css-linergaff-page" %}
 	<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
 		{% endassets %}
 	{% endblock %}
 </head>
 <body>
 	<div class="content">
-		{% include 'liner-gaff/fragments/menu.html' %}
+		{% include 'fragments/menu.html' %}
 
 		{% if page.metadata['coverimage'] %}
 		    <div class="min-height-full">

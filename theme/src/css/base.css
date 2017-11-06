@@ -101,6 +101,13 @@ a:hover,a:focus,a:active {
     text-decoration: underline;
 }
 
+*:focus {
+    outline-color: #e78d9f;
+    outline-style: double;
+    outline-width: 5px;
+    outline-offset: 2px; 
+    background-color: rgba(0,0,0,.1);
+}
 
 *::selection {
   color: #333;

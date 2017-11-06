@@ -130,8 +130,7 @@ PLUGINS = [
     'pelican-linkclass',
     'pelicanfly',
     'assets',
-    'gallery',
-    'date_utils'
+    'gallery'
 ]
 
 

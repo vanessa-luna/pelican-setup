@@ -1,17 +1,13 @@
     <script type="text/javascript">
-      // array of possible images sizes built off config filename
-      var imageSizes = [];
-      {% for name, dim in THUMBNAIL_SIZES.iteritems() %}
-      imageSizes[ {{ loop.index-1 }} ] = { name: "{{name}}", size:"{{ dim }}", width: parseInt("{{dim}}".replace(/x.+/, '')), height: parseInt("{{dim}}".replace(/.+x/, '')) }
-      {% endfor %}
-      // sorted largest to smallest so if two sizes match abs, it choses the smaller
-      imageSizes.sort(function(a,b) {return (a.height > b.height) ? -1 : ((b.height > a.height) ? 1 : 0);} );
+      function gh(s) { return parseInt(s.replace(/.+x/, '')) }
+      var imageSizes = [{% for name, dim in THUMBNAIL_SIZES.iteritems() %}{name:"{{name}}", h:gh("{{dim}}")}{% if not loop.last %}, {% endif %}{% endfor %}]
+      imageSizes.sort(function(a,b) {return (a.h > b.h) ? -1 : ((b.h > a.h) ? 1 : 0);} );
 
-      function imgUrlByHeight(filename, height) {
+      function imgUrlByHeight(filename, h) {
         var chosenSize = imageSizes[0]; //start at smallest size
         for (var i = 0; i < imageSizes.length; i++){ // redo smallest to calculate abs
           var curSize = imageSizes[i];
-          curSize.abs = Math.abs(height - curSize.height);
+          curSize.abs = Math.abs(h - curSize.h);
           if (curSize.abs <= chosenSize.abs) chosenSize = curSize;
         }
         return "url({{ SITEURL }}/{{ THUMBNAIL_DIR}}/" + chosenSize.name + "/" + filename;

@@ -314,8 +314,7 @@ PLUGINS = [
     'pelicanfly',               # adds font awesome support
     'assets',                   # adds compiler for assets
     'gallery',                  # adds gallery support to content
-    'archives_per_category',     # generates archive page per category
-    'date_utils'
+    'archives_per_category'     # generates archive page per category
 ]
 
 
@@ -352,8 +351,7 @@ css_paginated = ['fragments/pagination.css']
 css_comments = ['fragments/comments.css']
 
 
-css_linergaff = css_content + ['fragments/forms.css', 'liner-gaff/main.css', 'liner-gaff/index.css', 'liner-gaff/donate.css', 'liner-gaff/request.css', 'liner-gaff/contact.css', 'liner-gaff/menu.css',
-    'liner-gaff/guides.css']
+
 
 
 css_gallery = ['fragments/gallery.css']
@@ -371,8 +369,6 @@ asset_base = ('css-base', css_base,
             { 'output': 'css/base.min.css', 'filters': 'yui_css' })
 asset_fragment_gallery = ('css-fragment-gallery', css_gallery,
             {'output': 'css/fragments/gallery-fragment.min.css', 'filters': 'yui_css'})
-# asset_fragment_gallery_js = ('js-gallery', js_gallery,
-                # {'output':'js/gallery.js'})
 asset_fragment_photoswipe = ('css-fragment-photoswipe', css_photoswipe,
             {'output': 'css/fragments/photoswipe.min.css', 'filters': 'yui_css'})
 asset_fragment_photoswipe_js = ('js-photoswipe', js_photoswipe,
@@ -412,10 +408,7 @@ asset_article_gallery = ('css-article-gallery',
             ['gallery.css'],
             {'output': 'css/gallery-article.min.css', 'filters': 'yui_css'})
 
-# LINER-GAFF
-asset_linergaff_base = ('css-liner-gaff',
-                css_linergaff,
-                {'output': 'css/liner-gaff.min.css', 'filters': 'yui_css'})
+
 
 
 ASSET_BUNDLES = [
@@ -429,12 +422,10 @@ ASSET_BUNDLES = [
     asset_page,
     asset_page_gallery,
     asset_article_gallery,
-    # asset_fragment_gallery_js,
     asset_fragment_photoswipe,
     asset_fragment_photoswipe_js,
     asset_fragment_photoswipe_js_ui,
-    asset_fragment_validate_js,
-    asset_linergaff_base
+    asset_fragment_validate_js
 ]
 
 

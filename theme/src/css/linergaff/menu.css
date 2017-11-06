@@ -43,6 +43,9 @@
 .liner-gaff-menu div a:hover {
     background-color: #f7e8e8;
 }
+.liner-gaff-menu div a:focus {
+    outline-offset: -5px;
+}
 .liner-gaff-menu div a div {
     margin:auto;
 }

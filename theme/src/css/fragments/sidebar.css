@@ -46,6 +46,7 @@
 
 
 .sidebar a { color: #fff; }
+.sidebar a:focus { outline-offset: -5px; }
 
 
 

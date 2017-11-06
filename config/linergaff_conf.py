@@ -17,14 +17,14 @@ from blog_conf import *
 # ██   ██ ██      ██      ██   ██ ██    ██ ██      ██
 # ██████  ███████ ██      ██   ██  ██████  ███████ ██
 
-PATH             = '../content/liner-gaff'
+PATH             = '../content/linergaff'
 
 PAGE_PATHS       = ['pages']
 PAGE_EXCLUDES    = []
 ARTICLE_PATHS    = ['posts']
 ARTICLE_EXCLUDES = []
-STATIC_PATHS     = ['liner-gaff']
-STATIC_EXCLUDES  = ['liner-gaff/assets/.raw']
+STATIC_PATHS     = ['linergaff', 'images']
+STATIC_EXCLUDES  = ['linergaff/assets/.raw']
 
 
 
@@ -36,32 +36,22 @@ STATIC_EXCLUDES  = ['liner-gaff/assets/.raw']
 # ██    ██ ██   ██ ██
 #  ██████  ██   ██ ███████
 
-INDEX_SAVE_AS          = 'liner-gaff/blog/index.html'
-ARTICLE_URL            = 'liner-gaff/blog/a/{slug}'
-ARTICLE_SAVE_AS        = 'liner-gaff/blog/a/{slug}/index.html'
-DRAFT_URL              = 'liner-gaff/blog/drafts/{slug}.html'
-DRAFT_SAVE_AS          = 'liner-gaff/blog/drafts/{slug}.html'
-PAGE_URL               = 'liner-gaff/{slug}/'
-PAGE_SAVE_AS           = 'liner-gaff/{slug}/index.html'
-CATEGORIES_URL         = 'liner-gaff/blog/categories/'
-CATEGORIES_SAVE_AS     = 'liner-gaff/blog/categories/index.html'
-CATEGORY_URL           = 'liner-gaff/blog/categories/{slug}/'
-CATEGORY_SAVE_AS       = 'liner-gaff/blog/categories/{slug}/index.html'
-ARCHIVES_URL           = 'liner-gaff/blog/archives/'
-ARCHIVES_SAVE_AS       = 'liner-gaff/blog/archives/index.html'
+ROOT_URL               = 'linergaff/'
 
+INDEX_SAVE_AS          = ROOT_URL + 'blog/index.html'
+ARTICLE_URL            = ROOT_URL + 'blog/a/{slug}'
+ARTICLE_SAVE_AS        = ROOT_URL + 'blog/a/{slug}/index.html'
+DRAFT_URL              = ROOT_URL + 'blog/drafts/{slug}.html'
+DRAFT_SAVE_AS          = ROOT_URL + 'blog/drafts/{slug}.html'
+PAGE_URL               = ROOT_URL + '{slug}/'
+PAGE_SAVE_AS           = ROOT_URL + '{slug}/index.html'
+CATEGORIES_URL         = ROOT_URL + 'blog/categories/'
+CATEGORIES_SAVE_AS     = ROOT_URL + 'blog/categories/index.html'
+CATEGORY_URL           = ROOT_URL + 'blog/categories/{slug}/'
+CATEGORY_SAVE_AS       = ROOT_URL + 'blog/categories/{slug}/index.html'
+ARCHIVES_URL           = ROOT_URL + 'blog/archives/'
+ARCHIVES_SAVE_AS       = ROOT_URL + 'blog/archives/index.html'
 
-
-
-
-
-# ████████ ██   ██ ███████ ███    ███ ███████
-#    ██    ██   ██ ██      ████  ████ ██
-#    ██    ███████ █████   ██ ████ ██ █████
-#    ██    ██   ██ ██      ██  ██  ██ ██
-#    ██    ██   ██ ███████ ██      ██ ███████
-
-# THEME_STATIC_PATHS = ['theme']
 
 
 
@@ -77,7 +67,7 @@ ARCHIVES_SAVE_AS       = 'liner-gaff/blog/archives/index.html'
 DIRECT_TEMPLATES           = ['index', 'archives', 'categories']
 PAGINATED_DIRECT_TEMPLATES = ['index']
 # TEMPLATE_PAGES             = {'gallery.html': 'gallery.html'}
-EXTRA_TEMPLATES_PATHS      = ['theme/templates/liner-gaff'] # relative to pwd of scripts
+EXTRA_TEMPLATES_PATHS      = ['theme/templates/linergaff'] # relative to pwd of scripts
 
 
 
@@ -89,7 +79,7 @@ EXTRA_TEMPLATES_PATHS      = ['theme/templates/liner-gaff'] # relative to pwd of
 # ██      ██      ██      ██   ██
 # ██      ███████ ███████ ██████
 
-FEED_BASE_FOLDER      = 'liner-gaff/blog/feed/'
+FEED_BASE_FOLDER      = ROOT_URL + 'blog/feed/'
 
 # FEED_DOMAIN = None, i.e. base URL is "/"
 FEED_MAX_ITEMS        = 13
@@ -123,9 +113,13 @@ DEFAULT_PAGINATION = 5
 # ██      ██    ██      ██    ██    ██    ██ ██  ██  ██ ██  ███    ██
 #  ██████  ██████  ███████    ██     ██████  ██      ██ ██ ███████ ███████
 
-
-
 COMMENTS_PAGE = "liner-gaff"
+
+
+
+
+
+
 
 # ██████  ██      ██    ██  ██████  ██ ███    ██ ███████
 # ██   ██ ██      ██    ██ ██       ██ ████   ██ ██
@@ -145,36 +139,42 @@ PLUGINS = [
     'assets',
     'gallery',
     'thumbnailer',
-    'archives_per_category',
-    'date_utils'
+    'archives_per_category'
 ]
 
 
 # [archives_per_category]
-ARCHIVES_PER_CATEGORY_URL           = 'liner-gaff/blog/archives/{category}/'
-ARCHIVES_PER_CATEGORY_SAVE_AS       = 'liner-gaff/blog/archives/{category}/index.html'
+ARCHIVES_PER_CATEGORY_URL     = ROOT_URL + 'blog/archives/{category}/'
+ARCHIVES_PER_CATEGORY_SAVE_AS = ROOT_URL + 'blog/archives/{category}/index.html'
+
 
 
 # [assets]
-css_linergaff = ['liner-gaff/main.css', 'liner-gaff/menu.css']
+css_linergaff = ['linergaff/main.css', 'linergaff/menu.css']
 
+css_linergaff_page = css_content + ['fragments/forms.css', 'linergaff/main.css', 'linergaff/index.css', 'linergaff/donate.css', 'linergaff/request.css', 'linergaff/contact.css', 'linergaff/menu.css',
+    'linergaff/guides.css']
 
-asset_linergaff_blog = ('css-linergaff-blog',
-                css_content + css_paginated + ['index.css'] + css_linergaff,
-                {'output': 'css/liner-gaff-index.min.css', 'filters': 'yui_css'})
 
 asset_linergaff_base = ('css-linergaff-base',
                 css_linergaff,
                 {'output': 'css/liner-gaff-base.min.css', 'filters': 'yui_css'})
 
+asset_linergaff_page = ('css-linergaff-page',
+                css_linergaff_page,
+                {'output': 'css/liner-gaff-page.min.css', 'filters': 'yui_css'})
 
-ASSET_BUNDLES += [asset_linergaff_blog, asset_linergaff_base]
+
+ASSET_BUNDLES += [
+    asset_linergaff_base,
+    asset_linergaff_page
+]
 
 
 
 
 # [gallery]
-GALLERY_PATH ='liner-gaff/images'
+GALLERY_PATH   = 'images'
 
 # [thumbnailer]
-IMAGE_PATH = 'liner-gaff/images'
+IMAGE_PATH     = 'images'

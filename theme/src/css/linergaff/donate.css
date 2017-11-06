@@ -77,6 +77,8 @@
     padding: 1rem;
     background: none;
 }
+.donate-intro a.box:focus{ outline-offset: -5px; }
+
 .donate-intro .flex-table .flex-cell a.box:hover  {
     background-color: #f7e8e8;
 }

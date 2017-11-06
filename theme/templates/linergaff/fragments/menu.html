@@ -1,0 +1,12 @@
+        <div class="liner-gaff-menu">
+            <div class="{% if output_file == "linergaff/index.html" %}active{% endif %}"><a href="/linergaff"><div>LINER GAFF</div></a></div>
+            <input id="menu-toggle" type="checkbox">
+            <label class="menu-icon" for="menu-toggle"><i class="fa fa-menu"></i></label>
+            <div class="{% if "blog/" in output_file %}active{% endif %}" style="float:right;"><a href="/linergaff/blog"><div>BLOG</div></a></div>
+            <menu>
+                <div class="{% if output_file == "linergaff/info/index.html" %}active{% endif %}"><a href="/linergaff/info"><div>INFO</div></a></div>
+                <div class="{% if output_file == "linergaff/donate/index.html" %}active{% endif %}"><a href="/linergaff/donate"><div>DONATE</div></a></div>
+                <div class="{% if output_file == "linergaff/order/index.html" %}active{% endif %}"><a href="/linergaff/order"><div>ORDER</div></a></div>
+                <div class="{% if output_file == "linergaff/contact/index.html" %}active{% endif %}"><a href="/linergaff/contact"><div>CONTACT</div></a></div>
+            </menu>
+        </div>
