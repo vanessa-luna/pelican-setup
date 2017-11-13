@@ -55,7 +55,7 @@
     border-color: #666;
     background: transparent;
     margin-left: 1rem;
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 
 .post-meta .post-date {

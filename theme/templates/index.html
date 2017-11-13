@@ -20,7 +20,7 @@
 						<i class="fa fa-picture"></i>
 					{% endif %}
 						{{ article.category.name}}<br>
-						<time class="post-date" datetime={{article.date}}>{{ article.locale_date }}</time>
+						<time class="post-date" datetime={{article.date}} title="{{article.locale_date}}">{{ article.locale_date }}</time>
 					</div></div>
 					<a class="post-title-a" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
 				</h1>
