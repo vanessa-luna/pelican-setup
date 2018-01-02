@@ -14,7 +14,7 @@ def go (pelican):
                 with open(file_path, "r+") as f:
                     src = f.read()
                     # REGEXP
-                    pattern = '(https://vanessa-luna\.github\.io|(?<=src\=")|(?<=url\())(?=/thumb/|/images/)'
+                    pattern = '(https://vanessa-luna\.github\.io|(?<=src\=")|(?<=url\()|(?<=href\=))(?=/thumb/|/images/)'
                     prefix = "http://res.cloudinary.com/vanessa-luna/image/upload"
                     src = re.sub(pattern, prefix, src)
                     f.seek(0)
