@@ -40,6 +40,7 @@ function usage(){
     echo "l = liner-gaff"
     echo "s = shadows"
     echo "m = media"
+    echo "mu = media & CDN upload"
     echo "no input will serve only"
     echo "any other input will stop (sdlfk)"
     echo ""
@@ -128,6 +129,12 @@ function media() {
     thumbs_pid=$!
     echo $thumbs_pid > $THUMBS_PID
 }
+function upload_img() {
+    echo "trying to upload images"
+    cd $CONF_DIR
+    $PY img_upload.py
+    cd $BASE_DIR
+}
 function serve () {
     # move to output dir and start server
     mkdir -p $DEV_OUTPUT_DIR && cd $DEV_OUTPUT_DIR
@@ -195,6 +202,11 @@ elif [[ $# -eq 1 ]]; then
         # MEDIA RUN
         media
         did_start $thumbs_pid
+    elif [[ $1 == 'mu' ]]; then
+        # MEDIA RUN & UPLOAD
+        media
+        did_start $thumbs_pid
+        upload_img
     elif [[ $1 == 'p' ]]; then
         # PRODUCTION SERVE
         serve_prod
