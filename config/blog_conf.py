@@ -462,3 +462,15 @@ ARCHIVES_PER_CATEGORY_SAVE_AS       = 'archives/{category}/index.html'
 # DAY_ARCHIVES_PER_CATEGORY_SAVE_AS   =
 # MONTH_ARCHIVES_PER_CATEGORY_SAVE_AS =
 # YEAR_ARCHIVES_PER_CATEGORY_SAVE_AS  = 'archives/{category}/{date}.html'
+
+
+#[inject_cdn]
+CDN_PREFIX = "https://res.cloudinary.com/vanessa-luna/image/upload"
+# capture github domain if exists,
+# if not, then if before the url is a
+# src, url or href
+CDN_REGEX = '(https://vanessa-luna\.github\.io|' \
+            '(?<=src\=")|' \
+            '(?<=url\()|' \
+            '(?<=href\=))' \
+            '(?=/thumb/|/images/)'
