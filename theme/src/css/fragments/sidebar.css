@@ -143,6 +143,7 @@
 
 .sidebar .menu .menu-item a {
     display:block;
+    padding-top: .3rem;
 }
 .sidebar .menu .menu-item a:hover,
 .sidebar .menu .menu-item a:focus,
