@@ -24,8 +24,6 @@ $PELICAN -s $THUMBS_CONF
 $PELICAN -s $LINERGAFF_CONF
 $PELICAN -s $SHADOWS_CONF
 $PELICAN -s $BLOG_CONF
-$PY $CONFDIR/img_upload.py
-
 
 # IF SEND IN OPTION DON'T GIT THAT SHIT...
 if [[ ($# -eq 0) ]]; then
@@ -34,4 +32,7 @@ if [[ ($# -eq 0) ]]; then
     git add .
     git commit -m "update"
     git push
+
+    cd $CONFDIR
+    $PY img_upload.py
 fi
