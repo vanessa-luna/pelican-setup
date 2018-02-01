@@ -1,27 +1,12 @@
 
 import sys
+import os
 from pathlib import Path
 import cloudinary
 import cloudinary.api
 import cloudinary.uploader
 from cloudinary.api import Error
-
-
-import socket
-REMOTE_SERVER = "www.google.com"
-def is_connected(hostname):
-  try:
-    # see if we can resolve the host name -- tells us if there is
-    # a DNS listening
-    host = socket.gethostbyname(hostname)
-    # connect to the host -- tells us if the host is actually
-    # reachable
-    s = socket.create_connection((host, 80), 2)
-    return True
-  except:
-     pass
-  return False
-
+from blog_conf import THUMBNAIL_SIZES
 
 
 # Cloudinary settings using python code. Run before pycloudinary is used.
@@ -37,13 +22,10 @@ thumbs_path = Path.cwd() / '..' / '.output' / 'thumb'
 images_to_upload = []
 failed_uploads = []
 
-# recursive loop for all images in folder to upload
-def parse_folder (folder):
-    for pth in folder.iterdir():
-        if pth.suffix != '':
-            images_to_upload.append(pth)
-        else:
-            parse_folder(pth)
+
+
+
+
 
 def upload_img(img):
     str_pth = str(img)
@@ -63,17 +45,57 @@ def upload_img(img):
 
 
 
-if is_connected(REMOTE_SERVER):
 
-    parse_folder(images_path)
-    parse_folder(thumbs_path)
-
-    images_to_upload.sort()
-
-
-    for img in images_to_upload:
-        upload_img(img)
+def upload (images):
+    for img in images:
+        if (img.suffix != "html" or img.suffix != "mp4"):
+            upload_img(img)
 
     print "~~~~~~~~~~"
     for fail in failed_uploads:
         print fail
+
+
+
+def get_thumbnails(folder):
+    files = []
+    for size in THUMBNAIL_SIZES:
+        files += (thumbs_path / size / folder.stem).glob("*.*")
+    return files
+
+
+
+
+
+import socket
+def is_connected():
+  hostname = "www.google.com"
+  try:
+    host = socket.gethostbyname(hostname)
+    s = socket.create_connection((host, 80), 2)
+    return True
+  except:
+     pass
+  return False
+
+
+  
+
+if is_connected():
+
+    def _getmtime(entry):
+        return entry.stat().st_ctime
+
+    folders_in_images = [Path(images_path)]
+    for item in Path(images_path).iterdir():
+        if item.is_dir():
+            folders_in_images.append (item)
+
+    folders_in_images = sorted(folders_in_images, key=_getmtime, reverse=True)
+
+    images_to_upload = []
+    for f in folders_in_images:
+        images_to_upload += f.glob("*.*")
+        images_to_upload += get_thumbnails(f)
+
+    upload(images_to_upload)
