@@ -472,5 +472,6 @@ CDN_PREFIX = "https://res.cloudinary.com/vanessa-luna/image/upload"
 CDN_REGEX = '(https://vanessa-luna\.github\.io|' \
             '(?<=src\=")|' \
             '(?<=url\()|' \
+            "(?<=url\(')|" \
             '(?<=href\=))' \
             '(?=/thumb/|/images/)'
