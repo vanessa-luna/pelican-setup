@@ -107,7 +107,7 @@ function start_up(){
     did_start $srv_pid
 }
 function content() {
-    $PELICAN -D -r -s $BLOG_CONF &
+    $PELICAN -r -s $BLOG_CONF &
     blog_pid=$!
     echo $blog_pid > $BLOG_PID
 }
