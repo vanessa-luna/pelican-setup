@@ -22,7 +22,7 @@ LINERGAFF_CONF=$CONF_DIR/linergaff_conf_dev.py
 THUMBS_CONF=$CONF_DIR/thumbnail_conf.py
 
 # PID management of running processes
-PID_DIR=$BASE_DIR/.cache
+PID_DIR=$CONF_DIR/.cache
 SRV_PID=$PID_DIR/srv.pid
 BLOG_PID=$PID_DIR/blog.pid
 LINERGAFF_PID=$PID_DIR/linergaff.pid
