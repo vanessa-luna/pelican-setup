@@ -79,3 +79,8 @@
 	padding-bottom: 0;
 	border: 0;
 }
+.category-description {
+   font-size: .9rem;
+   font-weight: normal;
+   line-height: 1.4rem;
+}

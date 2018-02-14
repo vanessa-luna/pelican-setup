@@ -16,7 +16,7 @@
 	  {% for cat, arts in categories %}
 	    <a class="category" href="{{SITEURL}}/{{cat.url}}">
 	      <div class="category-count">({{ arts | length }})</div>
-	      <div class="box">{{ cat.name }}</div>
+	      <div class="box">{{ cat.name }}<p>{{cat.short}}</p></div>
 	    </a>
 	  {% endfor %}
 	</div>

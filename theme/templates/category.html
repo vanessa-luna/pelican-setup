@@ -10,5 +10,6 @@
 
 
 {% block title %}
-  <h1 class="category-title pad-content">{{ category | title }} Posts</h1> 
+  <h1 class="category-title pad-content">{{ category | title }} Posts
+  <span class="category-description"> {{ category.description }} </span></h1>
 {% endblock %}

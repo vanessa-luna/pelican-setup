@@ -315,7 +315,8 @@ PLUGINS = [
     'assets',                   # adds compiler for assets
     'gallery',                  # adds gallery support to content
     'archives_per_category',    # generates archive page per category
-    'inject_cdn'                # replace img urls with cdn domain
+    'inject_cdn',               # replace img urls with cdn domain
+    'category_meta'
 ]
 
 
