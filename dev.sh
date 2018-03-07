@@ -30,6 +30,8 @@ SHADOWS_PID=$PID_DIR/shadows.pid
 THUMBS_PID=$PID_DIR/thumbs.pid
 
 
+# todo: if not .cache, create .cache
+mkdir $PID_DIR
 
 
 function usage(){

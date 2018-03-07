@@ -102,6 +102,7 @@ SIDEBAR_LINKS = (
     ('Archive',   ['hourglass-o', 'hourglass'],     '/s/archives/'),
     ('', '', ''),
     ('About',     ['dot-circled', 'cloud-sun-inv'], '/s/about'),
+    ('Character', ['anchor', 'umbrella'], '/s/character'),
     # ('Gallery',    ['picture', 'eye-off', 'eye'], '/images'),
     # ('', '', ''),
     # ('Contact',    ['thumbs-up', 'hand-paper-o', 'hand-scissors-o', 'hand-grab-o'], '/contact')

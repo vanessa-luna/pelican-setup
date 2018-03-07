@@ -5,6 +5,15 @@ This document will describe how I have configured  [Pelican](https://getpelican.
 
 > This may take a while to understand, and I may not do a good job of explaining it. However, since I've shared bits and pieces of it on my blog I figured the whole thing should be available in case someone needs it.
 
+## Installation
+
+Requirements:
+
+1. python 2.7+
+2. pip
+3. pip install markdown fontawesome-markdown webassets
+
+
 
 ## High Level
 
