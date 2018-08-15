@@ -4,6 +4,22 @@
     {% assets "css-gallery" %}
     <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
     {% endassets %}
+    <script src="/theme/js/lazysizes.min.js" async=""></script>
+    <script>
+        var collapsed = true;
+        function toggleCollapse() {
+            collapsed = !collapsed;
+            var chex = document.getElementsByTagName("input");
+            var collapseToggle = document.getElementById("collapseToggle");
+            if (collapsed) {
+                for (var i = 0; i < chex.length; i++) { chex[i].checked = false; }
+                collapseToggle.innerHTML = "Expand all Albums"
+            } else {
+                for (var i = 0; i < chex.length; i++) { chex[i].checked = true; }
+                collapseToggle.innerHTML = "Collapse all Albums"
+            }
+        }
+    </script>
 {% endblock %}
 
 {% block page_title %}Gallery{% endblock page_title %}
@@ -16,30 +32,45 @@
             Enable javascript to use the fancy gallery viewer.<br>
             Instead, clicking an image will load the image in a new page.
         </div>
+        <style> .no-js, .no-js img.lazyload { display: none; } </style>
     </noscript>
 
+    <div class="no-js">
+        <a id="collapseToggle" onclick="toggleCollapse()">Expand all Albums</a>
+         <!-- | sort by: <a>name</a>, <a>date</a>, <a>default</a> -->
+    </div>
 
     {{ page.content }}
 
+    
     {% for album, images in page.gallery.iteritems() %}
     {% set var_prefix = album | replace('-', '_') %}
 
-    <br>
-    <h2>{{ album | replace('-', ' ') }}</h2>
-    <div class='album'>
-        <script type="text/javascript"> var {{var_prefix}}_items = []; </script>
-        {% for image in images %}
-        <div class='album-image'>
-            <noscript> <a href="{{SITEURL}}/{{GALLERY_PATH}}/{{album}}/{{image}}"> </noscript>
-            <img class="fig-img" style="cursor:pointer;"
-              onclick="initGallery({{var_prefix}}_items, {{loop.index-1}})"
-              src="{{ SITEURL }}/thumb/small/{{album}}/{{ image }}"></img>
-            <noscript></a></noscript>
-            <script type="text/javascript">
-                {{var_prefix}}_items [{{loop.index-1}}] = { src: '{{SITEURL}}/{{GALLERY_PATH}}/{{album}}/{{image}}', doGetSlideDimensions: true, w: 300, h:200 }
-            </script>
+    <div class="album-container" id="{{album}}">
+        <input id="chk-{{album}}" type="checkbox">
+        <a>
+            <label for="chk-{{album}}">
+                <h2 class="album-title"> {{ album | replace('-', ' ') }} </h2>
+            </label>
+        </a>
+        <div class='album'>
+            <script type="text/javascript"> var {{var_prefix}}_items = []; </script>
+            {% for image in images %}
+            <div class='album-image'>
+                <img class="fig-img lazyload" style="cursor:pointer;"
+                    onclick="initGallery({{var_prefix}}_items, {{loop.index-1}})"
+                    data-src="{{ SITEURL }}/thumb/small/{{album}}/{{ image }}"></img>
+                <script type="text/javascript">
+                    {{var_prefix}}_items [{{loop.index-1}}] = { src: '{{SITEURL}}/{{GALLERY_PATH}}/{{album}}/{{image}}', doGetSlideDimensions: true, w: 300, h:200 }
+                </script>
+                <noscript>
+                    <a href="{{SITEURL}}/{{GALLERY_PATH}}/{{album}}/{{image}}" target="blank">
+                        <img src="{{ SITEURL }}/thumb/small/{{album}}/{{ image }}"/>
+                    </a>
+                </noscript>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
     {% endfor %}
 

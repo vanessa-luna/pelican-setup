@@ -16,6 +16,22 @@
   z-index: 100;
   background-color: #111;
 }
+
+#collapseToggle { cursor: pointer; }
+
+.album-container { padding: .5rem 0; }
+.album-container:nth-of-type(odd) { background-color: hsl(0, 48%, 96%);}
+.album-container label { cursor: pointer; }
+.album-container .album-title { margin:0; }
+.album-container .album-title::before { font-family: monospace; }
+
+.album-container input { display:none;}
+.album-container input[type=checkbox]:checked + a .album-title::before { content: "[-] "; }
+.album-container input[type=checkbox]:checked + a + .album { display:block; }
+
+.album-container input[type=checkbox] + a .album-title::before { content: "[+] "; }
+.album-container input[type=checkbox] + a + .album { display:none; }
+
 .album {
   line-height: 0;
   -webkit-column-count: 5;
@@ -26,23 +42,20 @@
   column-gap:           2px;
 }
 .album-image {
-  width: 100%;
   height: auto;
-  margin: 2px;
+  margin: 2px 0;
 }
-.album .album-image:first-of-type {
-  margin-top:0;
-}
-.album-image img {
+.album .album-image:first-of-type { margin-top:0; }
+.album .album-image:last-of-type { margin-bottom:0; }
+.album .album-image img {
 	display: block;
 	width: 100%;
 	max-width: 100%;
   border-radius: 0;
-  margin: 2px auto;
 }
 
-@media (max-width: 599px) { .album { column-count:2;-moz-column-count:2;-webkit-column-count:2; } }
-@media (min-width: 600px) { .album { column-count:2;-moz-column-count:2;-webkit-column-count:2; } }
-@media (min-width: 800px) { .album { column-count:3;-moz-column-count:3;-webkit-column-count:3; } }
+@media (max-width: 599px)  { .album { column-count:2;-moz-column-count:2;-webkit-column-count:2; } }
+@media (min-width: 600px)  { .album { column-count:2;-moz-column-count:2;-webkit-column-count:2; } }
+@media (min-width: 800px)  { .album { column-count:3;-moz-column-count:3;-webkit-column-count:3; } }
 @media (min-width: 1024px) { .album { column-count:4;-moz-column-count:4;-webkit-column-count:4; } }
 @media (min-width: 1440px) { .album { column-count:5;-moz-column-count:5;-webkit-column-count:5; } }
