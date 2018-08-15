@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PY=${PY:-python}
+PY=${PY:-python2.7}
 PELICAN=${PELICAN:-pelican}
 
 BASE_DIR=$(pwd)
