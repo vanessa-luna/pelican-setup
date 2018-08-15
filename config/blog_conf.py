@@ -288,7 +288,7 @@ SIDEBAR_SECRET = "/s"
 # builds {SITEURL}/{IMAGE_PATH | THUMBNAIL_DIR/THUMBNAIL_SIZE}/
 #        {BG_GALLERY_NAME}/{random(BG_NUM_IMAGES)}{BG_IMAGE_SUFFIX}
 BG_GALLERY_NAME = 'backgrounds'
-BG_NUM_IMAGES = 25 # index chosen acts as prefix
+BG_NUM_IMAGES = 26 # index chosen acts as prefix
 BG_IMAGE_SUFFIX = 'cover.jpg'
 
 COMMENTS_PAGE = "vanessa-luna"
