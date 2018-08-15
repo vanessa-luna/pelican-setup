@@ -14,7 +14,7 @@
 }
 
 .sidebar {
-  width: 30vw;
+  width: 25vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -217,6 +217,7 @@
     .sidebar .menu .menu-item {
         height: 3rem;
         line-height: 3rem;
+        break-inside: avoid;
     }
 
     /* PUT ICON AND TEXT CLOSER TO SAVE SPACE */
