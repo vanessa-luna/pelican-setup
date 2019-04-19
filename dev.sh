@@ -14,12 +14,16 @@ SHADOWS_INPUT_DIR=$CONTENT_DIR/shadows
 
 PROD_OUTPUT_DIR=$BASE_DIR/.output
 DEV_OUTPUT_DIR=$BASE_DIR/.dev-output
+CODE_OUTPUT_DIR=$BASE_DIR/.code-output
+
+CODE_ENV_DIR=~/.local/virtualenv/pelican-dev
 
 # config locations
 BLOG_CONF=$CONF_DIR/blog_conf_dev.py
 SHADOWS_CONF=$CONF_DIR/shadows_conf_dev.py
 LINERGAFF_CONF=$CONF_DIR/linergaff_conf_dev.py
 THUMBS_CONF=$CONF_DIR/thumbnail_conf.py
+CODE_CONF=$CONF_DIR/blog_conf_code.py
 
 # PID management of running processes
 PID_DIR=$CONF_DIR/.cache
@@ -43,6 +47,7 @@ function usage(){
     echo "s = shadows"
     echo "m = media"
     echo "mu = media & CDN upload"
+    echo "c = run code / dev of pelican env"
     echo "no input will serve only"
     echo "any other input will stop (sdlfk)"
     echo ""
@@ -66,6 +71,7 @@ function shut_down(){
     kill_pid $LINERGAFF_PID
     kill_pid $SHADOWS_PID
     kill_pid $THUMBS_PID
+    . deactivate
 }
 
 function kill_pid {
@@ -137,6 +143,21 @@ function upload_img() {
     $PY img_upload.py
     cd $BASE_DIR
 }
+function code() {
+    # Turn on virtualenv
+    . $CODE_ENV_DIR/bin/activate
+    # then run
+    pelican -r -v --logs-dedup-min-level DEBUG -s $CODE_CONF &
+    blog_pid=$!
+    echo $blog_pid > $BLOG_PID
+}
+
+#   ___  ___ _ ____   _____
+#  / __|/ _ \ '__\ \ / / _ \
+#  \__ \  __/ |   \ V /  __/
+#  |___/\___|_|    \_/ \___|
+# __________________________________________________
+
 function serve () {
     # move to output dir and start server
     mkdir -p $DEV_OUTPUT_DIR && cd $DEV_OUTPUT_DIR
@@ -151,7 +172,21 @@ function serve_prod () {
     srv_pid=$!
     echo $srv_pid > $SRV_PID
 }
+function serve_code () {
+    # move to output dir and start server
+    mkdir -p $CODE_OUTPUT_DIR && cd $CODE_OUTPUT_DIR
+    $PY -m pelican.server $port &
+    srv_pid=$!
+    echo $srv_pid > $SRV_PID
+}
 
+
+#         _   _ _
+#   _   _| |_(_) |
+#  | | | | __| | |
+#  | |_| | |_| | |
+#   \__,_|\__|_|_|
+# __________________________________________________
 
 function did_start() {
     sleep 1
@@ -212,6 +247,11 @@ elif [[ $# -eq 1 ]]; then
     elif [[ $1 == 'p' ]]; then
         # PRODUCTION SERVE
         serve_prod
+        did_start $srv_pid
+    elif [[ $1 == 'c' ]]; then
+        # CODE TESTING SERVE
+        code
+        serve_code
         did_start $srv_pid
     fi
 

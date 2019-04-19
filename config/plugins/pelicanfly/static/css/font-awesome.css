@@ -117,6 +117,68 @@
     transform: rotate(359deg);
   }
 }
+
+
+.fa-star:before { content: '\e800'; } /* '' */
+.fa-heart:before { content: '\e801'; } /* '' */
+.fa-picture:before { content: '\e802'; } /* '' */
+.fa-eye:before { content: '\e803'; } /* '' */
+.fa-eye-off:before { content: '\e804'; } /* '' */
+.fa-thumbs-up:before { content: '\e805'; } /* '' */
+.fa-cog-alt:before { content: '\e806'; } /* '' */
+.fa-flight:before { content: '\e807'; } /* '' */
+.fa-flash:before { content: '\e808'; } /* '' */
+.fa-leaf:before { content: '\e809'; } /* '' */
+.fa-cloud-moon-inv:before { content: '\e80a'; } /* '' */
+.fa-sun-1:before { content: '\e80b'; } /* '' */
+.fa-off:before { content: '\e80c'; } /* '' */
+.fa-cancel:before { content: '\e80d'; } /* '' */
+.fa-umbrella:before { content: '\e80e'; } /* '' */
+.fa-moon-1:before { content: '\e80f'; } /* '' */
+.fa-cloud-sun-inv:before { content: '\e810'; } /* '' */
+.fa-feather:before { content: '\e811'; } /* '' */
+.fa-flag-filled:before { content: '\e812'; } /* '' */
+.fa-thumbs-up-1:before { content: '\e813'; } /* '' */
+.fa-reply:before { content: '\e814'; } /* '' */
+.fa-tree-2:before { content: '\e83f'; } /* '' */
+.fa-link-ext:before { content: '\f08e'; } /* '' */
+.fa-rss:before { content: '\f09e'; } /* '' */
+.fa-menu:before { content: '\f0c9'; } /* '' */
+.fa-sort-down:before { content: '\f0dd'; } /* '' */
+.fa-fighter-jet:before { content: '\f0fb'; } /* '' */
+.fa-angle-double-left:before { content: '\f100'; } /* '' */
+.fa-angle-double-right:before { content: '\f101'; } /* '' */
+.fa-angle-double-up:before { content: '\f102'; } /* '' */
+.fa-angle-double-down:before { content: '\f103'; } /* '' */
+.fa-laptop:before { content: '\f109'; } /* '' */
+.fa-rocket:before { content: '\f135'; } /* '' */
+.fa-anchor:before { content: '\f13d'; } /* '' */
+.fa-sun:before { content: '\f185'; } /* '' */
+.fa-moon:before { content: '\f186'; } /* '' */
+.fa-dot-circled:before { content: '\f192'; } /* '' */
+.fa-space-shuttle:before { content: '\f197'; } /* '' */
+.fa-file-video:before { content: '\f1c8'; } /* '' */
+.fa-plug:before { content: '\f1e6'; } /* '' */
+.fa-copyright:before { content: '\f1f9'; } /* '' */
+.fa-transgender-alt:before { content: '\f225'; } /* '' */
+.fa-battery-2:before { content: '\f242'; } /* '' */
+.fa-hourglass-o:before { content: '\f250'; } /* '' */
+.fa-hourglass-1:before { content: '\f251'; } /* '' */
+.fa-hourglass-2:before { content: '\f252'; } /* '' */
+.fa-hourglass-3:before { content: '\f253'; } /* '' */
+.fa-hourglass:before { content: '\f254'; } /* '' */
+.fa-hand-grab-o:before { content: '\f255'; } /* '' */
+.fa-hand-paper-o:before { content: '\f256'; } /* '' */
+.fa-hand-scissors-o:before { content: '\f257'; } /* '' */
+.fa-question-circle-o:before { content: '\f29c'; } /* '' */
+.fa-twitter-bird:before { content: '\f303'; } /* '' */
+
+
+
+
+
+
+
 .fa-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);

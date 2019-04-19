@@ -9,11 +9,17 @@ sys.path.append(os.path.dirname(__file__))
 from blog_conf import *
 
 
+#  DEBUG TESTING
+
+# 
+
+
+
 OUTPUT_PATH        = '../.dev-output/'
 SITEURL            = ''
 
-CACHE_CONTENT      = False
-LOAD_CONTENT_CACHE = False
+CACHE_CONTENT      = True
+LOAD_CONTENT_CACHE = True
 
 GOOGLE_ANALYTICS   = ''
 GAFF_ANALYTICS     = ''
@@ -34,3 +40,4 @@ PLUGINS = [
     'archives_per_category',    # generates archive page per category
     'category_meta'
 ]
+

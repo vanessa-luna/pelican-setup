@@ -27,7 +27,7 @@ from __future__ import unicode_literals
 # ██████  ███████ ██      ██   ██  ██████  ███████ ██
 
 SITENAME                   = u'Vanessa &#xe80a; Luna'
-SITEURL                    = 'https://vanessa-luna.github.io'
+SITEURL                    = 'https://vanessa-luna.life'
 
 PATH                       = '../content/blog'
 OUTPUT_PATH                = '../.output/'
@@ -62,7 +62,7 @@ DELETE_OUTPUT_DIRECTORY    = False
 SLUGIFY_SOURCE             = 'basename'
 
 CACHE_CONTENT              = True
-CONTENT_CACHING_LAYER      = 'reader' # 'generator' #
+CONTENT_CACHING_LAYER      = 'generator' # 'reader' #
 CACHE_PATH                 = '.cache'
 GZIP_CACHE                 = True
 LOAD_CONTENT_CACHE         = True
@@ -163,7 +163,7 @@ PAGINATED_DIRECT_TEMPLATES = ['index']
 # ██  ██  ██ ██         ██    ██   ██ ██   ██ ██   ██    ██    ██   ██
 # ██      ██ ███████    ██    ██   ██ ██████  ██   ██    ██    ██   ██
 
-AUTHOR              = u'Luna Umbra'
+AUTHOR                = u'Luna Umbra'
 # DEFAULT_METADATA    = {}
 # FILENAME_METADATA   = '(?P<date>d{4}-d{2}-d{2}).*'
 # PATH_METADATA       = ''
@@ -470,7 +470,7 @@ CDN_PREFIX = "https://res.cloudinary.com/vanessa-luna/image/upload"
 # capture github domain if exists,
 # if not, then if before the url is a
 # src, url or href
-CDN_REGEX = '(https://vanessa-luna\.github\.io|' \
+CDN_REGEX = '(https://vanessa-luna\.life|' \
             '(?<=src\=")|' \
             '(?<=url\()|' \
             "(?<=url\(')|" \

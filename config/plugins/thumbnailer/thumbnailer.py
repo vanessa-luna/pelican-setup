@@ -136,14 +136,15 @@ def resize_thumbnails(pelican):
     resizers = dict((k, _resizer(k, v, in_path)) for k,v in sizes.items())
     logger.debug("Thumbnailer Started")
     for dirpath, _, filenames in os.walk(in_path):
-        for filename in filenames:
-            if not filename.startswith('.'):
-                for name, resizer in resizers.items():
-                    in_filename = path.join(dirpath, filename)
-                    out_path = get_out_path(pelican, in_path, in_filename, name)
-                    resizer.resize_file_to(
-                        in_filename,
-                        out_path, pelican.settings.get('THUMBNAIL_KEEP_NAME'))
+        if "/." not in dirpath: 
+            for filename in filenames:
+                if not filename.startswith('.'):
+                    for name, resizer in resizers.items():
+                        in_filename = path.join(dirpath, filename)
+                        out_path = get_out_path(pelican, in_path, in_filename, name)
+                        resizer.resize_file_to(
+                            in_filename,
+                            out_path, pelican.settings.get('THUMBNAIL_KEEP_NAME'))
 
 
 def get_out_path(pelican, in_path, in_filename, name):

@@ -15,6 +15,7 @@ def get_gallery_path(pelican):
     return os.path.join(content_path, gallery_path)
 
 
+# post with gallery
 def add_gallery_post(generator):
     gallerycontentpath = get_gallery_path(generator)
     if gallerycontentpath == '':
@@ -36,7 +37,7 @@ def add_gallery_post(generator):
             article.album = album
             article.galleryimages = sorted(galleryimages)
 
-
+# page with a gallery
 def add_gallery_page(generator):
     gallerycontentpath = get_gallery_path(generator)
     if gallerycontentpath == '':
@@ -59,6 +60,7 @@ def add_gallery_page(generator):
             page.galleryimages = sorted(galleryimages)
 
 
+# gallery template page
 def generate_gallery_page(generator):
     gallerycontentpath = get_gallery_path(generator)
     if gallerycontentpath == '':
@@ -70,7 +72,9 @@ def generate_gallery_page(generator):
 
             for a in os.listdir(gallerycontentpath):
                 if not a.startswith('.') and os.path.isdir(os.path.join(gallerycontentpath, a)):
-
+                    # in a gallery folder...
+                    # make dict. dict has
+                    # date, images, category???
                     for i in os.listdir(os.path.join(gallerycontentpath, a)):
                         if not a.startswith('.') and os.path.isfile(os.path.join(os.path.join(gallerycontentpath, a), i)):
                             gallery.setdefault(a, []).append(i)
